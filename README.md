@@ -20,7 +20,6 @@ Operating System:
 * ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) Linux ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) *(Debian Based: Preferably [Kali Linux](https://www.kali.org/))*
 
 Packages:
-* [googler](https://github.com/jarun/googler)
 * python3
 * pip3
 
@@ -28,8 +27,6 @@ Python Library (Pip3):
 * [os](https://docs.python.org/3/library/os.html)
 * [time](https://docs.python.org/3/library/time.html)
 * [platform](https://docs.python.org/3/library/platform.html)
-* [smtplib](https://docs.python.org/3/library/smtplib.html)
-* [imaplib](https://docs.python.org/3/library/imaplib.html)
 
 ------------------------------------------------------------------------
 
