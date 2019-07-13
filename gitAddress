@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+cd /usr/var
+sudo git clone https://github.com/asian-code/malfactory.git
+cd /usr/var/malfactory
+chmod +x *
