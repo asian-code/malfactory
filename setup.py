@@ -38,18 +38,18 @@ def save_folder_location(location):
 try:
     subprocess.call("pip3 install scapy", shell=True)
 
-    subprocess.call("sudo mv simple-scan /usr/share", shell=True)  # folder
-    print("[+] moved simple-scan folder to /usr/share")
+    subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
+    print("[+] moved mal-factory folder to /usr/share")
 
-    subprocess.call("sudo mv simplescan.desktop /usr/share/applications/", shell=True)  # .desktop file
+    subprocess.call("sudo mv malfactory.desktop /usr/share/applications/", shell=True)  # .desktop file
     print("[+] moved desktop to /usr/share/applications")
 
-    subprocess.call("sudo mv simplescanner /usr/bin", shell=True)  # bash file
+    subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
     print("[+] moved bash file to /usr/bin")
 
     save_folder_location(get_current_dir())
 
-    time.sleep(3)
+    time.sleep(1)
 except:
     had_error = True
     raise
