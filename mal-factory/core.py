@@ -1,15 +1,17 @@
 #!/usr/bin/python
+import os
+import random
 
-r = '\033[0m'     #reset
+rr = '\033[0m'  # reset
 bold = '\033[01m'
-d = '\033[02m'     #disable
-ul = '\033[04m' #underline
+d = '\033[02m'  # disable
+ul = '\033[04m'  # underline
 reverse = '\033[07m'
-st = '\033[09m' #strikethrough
-invis = '\033[08m'#invisible
+st = '\033[09m'  # strikethrough
+invis = '\033[08m'  # invisible
 white = '\033[0m'
 cwhite = '\33[37m'
-black ='\033[30m'
+black = '\033[30m'
 red = '\033[31m'
 green = '\033[32m'
 orange = '\033[33m'
@@ -36,32 +38,26 @@ br = '\33[108m'
 brown = '\33[33m'
 bwhite = '\33[107'
 
-re = red
-w = white
-b = lblue
-g = green
-y = yellow
-
-import os
-import random
 
 def clear():
-    for i in range(5)
-      os.system("clear")
-    
+    for i in range(5):
+        os.system("clear")
+
 
 def quit():
     clear()
     exit()
 
+
 def randomlogo():
-    x = random.randint(1, 4)# generates int 1-3 , 4 is exclusive
+    x = random.randint(1, 4)  # generates int 1-3 , 4 is exclusive
     if x == 1:
         logo1()
     elif x == 2:
         logo2()
-    else x == 3:
+    elif x == 3:
         logo3()
+
 
 def logo1():
     print(lgreen + """
@@ -97,9 +93,10 @@ def logo1():
            ███████████████████
 """ + rr)
 
+
 def logo2():
     print(lred + """
-                                                            
+
                             ████                            
                       ████████████████                      
                     █████          █████                    
@@ -128,6 +125,7 @@ def logo2():
   ████             ██████████████████████             ████  
                        ██████████████                       
 """)
+
 
 def logo3():
     print(lgrey + """
@@ -161,3 +159,25 @@ def logo3():
                                            █████            
                                               ███           
 """)
+
+
+def options():
+    print("[ " + lcyan + bold + "1" + rr + " ] \t -Mal-maker text editor(Coming soon)")
+    print("[ " + red + bold + "99" + rr + " ] \t -Exit")
+
+
+def main():
+    try:
+        while True:
+            command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
+            if command == "1":
+                print("[-] Feature coming soon")
+            elif command == "2":
+                quit()
+            else:
+                print("[-] Invalid command of " + command)
+    except KeyboardInterrupt:
+        print(green + bold + +"+\n[+] Exiting program" + rr)
+    except Exception:
+        print("[ " + red + bold + "!" + rr + "] Error :")
+        raise
