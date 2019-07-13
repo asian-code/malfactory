@@ -9,8 +9,7 @@
 
 ## <p align="center"> <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> &nbsp; About Malfactory &nbsp; <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> </p>
 
-
-
+**By:** [lin8x](https://www.github.com/lin8x) & [asian-code](https://www.github.com/asian-code)
 
 ------------------------------------------------------------------------
 
