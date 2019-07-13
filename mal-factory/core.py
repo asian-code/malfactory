@@ -41,7 +41,7 @@ bwhite = '\33[107'
 
 
 def clear():
-    for i in range(5):
+    for i in range(0, 5):
         os.system("clear")
 
 
@@ -50,13 +50,14 @@ def quit():
 
 
 def random_logo():
-    x = random.randint(1, 4)  # generates int 1-3 , 4 is exclusive
+    x = random.randint(1, 3)
     if x == 1:
         logo1()
     elif x == 2:
         logo2()
     elif x == 3:
         logo3()
+    options()
 
 
 def logo1():
@@ -162,9 +163,9 @@ def logo3():
 
 
 def options():
-    print("[ " + lcyan + bold + "1" + rr + " ] \t -Mal-maker text editor(Coming soon)")
-    print("[ " + lcyan + bold + "clear" + rr + " ] \t -Clear screen")
-    print("[ " + lcyan + bold + "99" + rr + " ] \t -Exit")
+    print(rr + "[" + lcyan + bold + "1" + rr + "]\t\t -Malmaker text editor(Coming soon)")
+    print("[" + lcyan + bold + "clear" + rr + "]\t -Clear screen")
+    print("[" + lcyan + bold + "99" + rr + "]\t -Exit")
 
 
 def main():
@@ -185,3 +186,6 @@ def main():
     except Exception:
         print("[ " + red + bold + "!" + rr + "] Error :")
         raise
+
+
+main()
