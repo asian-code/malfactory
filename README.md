@@ -72,4 +72,6 @@ See also the list of contributors who participated in this project.
 
 This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/Malfactory/blob/master/LICENSE) file for details.
 
+This project also has a CODE OF CONDUCT for contributers - see the [CODE_OF_CONDUCT.md](https://github.com/asian-code/Malfactory/blob/master/CODE_OF_CONDUCT.md) file for details.
+
 ------------------------------------------------------------------------
