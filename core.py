@@ -53,7 +53,7 @@ def clear():
 
 def quit():
   clear()
-exit()
+  exit()
 
 def randomlogo():
     x = random.randint(1, 3)
