@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Malfactory
+Comment=Activate Malfactory
+Exec=/usr/bin/malfactory
+Icon=/usr/share/mal-factory/malfactorylogo.png
+Terminal=true
+Type=Application
