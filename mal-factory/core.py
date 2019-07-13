@@ -46,17 +46,16 @@ import os
 import random
 
 def clear():
-  i = 0
-  while i <= 5:
-    os.system("clear")
-    i = i + 1
+    for i in range(5)
+      os.system("clear")
+    
 
 def quit():
     clear()
     exit()
 
 def randomlogo():
-    x = random.randint(1, 3)
+    x = random.randint(1, 4)# generates int 1-3 , 4 is exclusive
     if x == 1:
         logo1()
     elif x == 2:
