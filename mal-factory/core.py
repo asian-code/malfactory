@@ -178,6 +178,7 @@ def main():
                 print(green + bold + "[-] Feature coming soon" + rr)
             elif command == "clear":
                 clear()
+                random_logo()
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 quit()
             else:
