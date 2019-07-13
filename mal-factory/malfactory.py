@@ -164,7 +164,7 @@ def logo3():
 
 
 def options():
-    print(rr + "[" + lcyan + bold + "1" + rr + "]\t\t -Malmaker text editor(Coming soon)")
+    print(rr + "[" + lcyan + bold + "1" + rr + "]\t -Malmaker text editor(Coming soon)")
     print("[" + lcyan + bold + "clear" + rr + "]\t -Clear screen")
     print("[" + lcyan + bold + "99" + rr + "]\t -Exit")
 
