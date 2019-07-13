@@ -52,8 +52,8 @@ def clear():
     i = i + 1
 
 def quit():
-  clear()
-  exit()
+    clear()
+    exit()
 
 def randomlogo():
     x = random.randint(1, 3)
