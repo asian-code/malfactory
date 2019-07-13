@@ -18,7 +18,7 @@ try:
     os.system("sudo rm -rf /usr/bin/malfactory")  # bash file
     print("[+] removed bash file /usr/bin/malfactory")
 
-    # removes the folder where simple scan installation folder is located
+    # removes the folder where the installation folder is located
     try:
         file = open("location.txt", "r")
         location = file.readlines()[0]
@@ -32,6 +32,6 @@ except:
     raise
 finally:
     if had_error:
-        print(red + bold + "[!] Unable to uninstall Simple-scan due to an error" + rr)
+        print(red + bold + "[!] Unable to uninstall "+app_name+" due to an error" + rr)
     else:
         print(green + bold + "[ OK ] Uninstall is complete, no errors !" + rr)
