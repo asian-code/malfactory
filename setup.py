@@ -37,8 +37,9 @@ def save_folder_location(location):
 
 try:
     # add modules u use here
+    
     # subprocess.call("pip3 install scapy", shell=True)
-    subprocess.call("pip3 install curses",shell=True)
+    # subprocess.call("pip3 install curses",shell=True)
 
     subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
     print("[+] moved mal-factory folder to /usr/share")
