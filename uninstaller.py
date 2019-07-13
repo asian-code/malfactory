@@ -1,20 +1,22 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import os
+
 red = '\033[31m'
 green = '\033[92m'
 rr = '\033[0m'  # reset
 bold = '\033[01m'
 had_error = False
+app_name = "Malfactory"
 try:
-    os.system("sudo rm -rf /usr/share/simple-scan")  # folder
-    print("[+] removed simple-scan folder in /usr/share/simple-scan")
+    os.system("sudo rm -rf /usr/share/mal-factory")  # folder
+    print("[+] removed " + app_name + " folder in /usr/share/simple-scan")
 
-    os.system("sudo rm -rf /usr/share/applications/simplescan.desktop")  # desktop file
-    print("[+] removed desktop file in /usr/share/applications/simplescan.desktop")
+    os.system("sudo rm -rf /usr/share/applications/malfactory.desktop")  # desktop file
+    print("[+] removed desktop file in /usr/share/applications/malfactory.desktop")
 
-    os.system("sudo rm -rf /usr/bin/simplescanner")  # bash file
-    print("[+] removed bash file /usr/bin/simplescan")
+    os.system("sudo rm -rf /usr/bin/malfactory")  # bash file
+    print("[+] removed bash file /usr/bin/malfactory")
 
     # removes the folder where simple scan installation folder is located
     try:
@@ -22,7 +24,7 @@ try:
         location = file.readlines()[0]
         os.system("sudo rm -rf {}".format(location))
     except:
-        had_error=True
+        had_error = True
         print("[!] Error-Unable to find location.txt")
 
 except:
@@ -30,6 +32,6 @@ except:
     raise
 finally:
     if had_error:
-        print(red+bold+"[!] Unable to uninstall Simple-scan due to an error"+rr)
+        print(red + bold + "[!] Unable to uninstall Simple-scan due to an error" + rr)
     else:
-print(green+bold+"[ OK ] Uninstall is complete, no errors !"+rr)
+        print(green + bold + "[ OK ] Uninstall is complete, no errors !" + rr)
