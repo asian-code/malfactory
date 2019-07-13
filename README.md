@@ -35,7 +35,7 @@ Python Library (Pip3):
 1. Download manually from the Github page.
 ###### Or
 2. Type in your terminal:
-`git clone https://www.github.com/lin8x/googleot`
+`git clone https://github.com/asian-code/malfactory`
 
 ------------------------------------------------------------------------
 
@@ -49,14 +49,14 @@ and
 
 #### <p align="center"> Once Finished Setup </p> <br>
 
-Type and enter `googleot` to run the tool **or** Open the application in your application menu.
+Type and enter `malfactory` to run the tool **or** Open the application in your application menu.
 <br><br>
 
 #### <p align="center"> Troubleshooting </p>
 
 If typing `googleot` does not work, then either you did not run the `setup.py` file or your linux distro doesn't support the file setup it uses.
 
-Most files go to `/usr/share/googleot-file`, `googleot.desktop` goes to `/usr/share/applications/`, and `googleot` goes to `/usr/bin`.
+Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/share/applications/`, and `malfactory` goes to `/usr/bin`.
 
 ------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ See also the list of contributors who participated in this project.
 
 ------------------------------------------------------------------------
 
-## <p align="center"> <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="googlelicenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="googlelicenseicon" width="20" height="20"> </p>
+## <p align="center"> <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> </p>
 
 This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/Malfactory/blob/master/LICENSE) file for details.
 
