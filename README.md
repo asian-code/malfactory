@@ -62,17 +62,15 @@ Most files go to `/usr/share/googleot-file`, `googleot.desktop` goes to `/usr/sh
 
 ## <p align="center"> <p align="center"> <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> &nbsp; Contributing &nbsp; <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> </p>
 
-Please read [CONTRIBUTING.md](https://github.com/Lin8x/skyBREAK/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/asian-code/Malfactory/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 See also the list of contributors who participated in this project.
-
-Please support the [creators](http://www.reflectstudios.com/) of **Welcome to the Game II**!
 
 ------------------------------------------------------------------------
 
 ## <p align="center"> <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="googlelicenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="googlelicenseicon" width="20" height="20"> </p>
 
-This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/Lin8x/skyBREAK/blob/master/LICENSE) file for details.
+This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/Malfactory/blob/master/LICENSE) file for details.
 
 [lin8x](https://www.github.com/lin8x)                   >   Main Developer <br>
 [asian-code](https://www.github.com/asian-code)         >   Debugger/Contributor
