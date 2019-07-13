@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import random
+import sys
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -45,11 +46,10 @@ def clear():
 
 
 def quit():
-    clear()
-    exit()
+    sys.exit()
 
 
-def randomlogo():
+def random_logo():
     x = random.randint(1, 4)  # generates int 1-3 , 4 is exclusive
     if x == 1:
         logo1()
@@ -163,21 +163,25 @@ def logo3():
 
 def options():
     print("[ " + lcyan + bold + "1" + rr + " ] \t -Mal-maker text editor(Coming soon)")
-    print("[ " + red + bold + "99" + rr + " ] \t -Exit")
+    print("[ " + lcyan + bold + "clear" + rr + " ] \t -Clear screen")
+    print("[ " + lcyan + bold + "99" + rr + " ] \t -Exit")
 
 
 def main():
+    random_logo()
     try:
         while True:
             command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
             if command == "1":
                 print("[-] Feature coming soon")
-            elif command == "2":
+            elif command == "clear":
+                clear()
+            elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 quit()
             else:
                 print("[-] Invalid command of " + command)
     except KeyboardInterrupt:
-        print(green + bold + +"+\n[+] Exiting program" + rr)
+        print(green + bold + "+\n[+] Exiting program" + rr)
     except Exception:
         print("[ " + red + bold + "!" + rr + "] Error :")
         raise
