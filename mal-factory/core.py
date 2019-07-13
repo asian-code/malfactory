@@ -2,6 +2,7 @@
 import os
 import random
 import sys
+import curses
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -174,13 +175,13 @@ def main():
         while True:
             command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
             if command == "1":
-                print("[-] Feature coming soon")
+                print(green + bold + "[-] Feature coming soon" + rr)
             elif command == "clear":
                 clear()
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 quit()
             else:
-                print("[-] Invalid command of " + command)
+                print(red + bold + "[-] Invalid command: " + rr + command)
     except KeyboardInterrupt:
         print(green + bold + "+\n[+] Exiting program" + rr)
     except Exception:
