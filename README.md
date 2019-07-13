@@ -17,7 +17,7 @@
 
 Operating System:
 * ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) Mac OS ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) *(Requires [Brew](https://brew.sh/))*
-* ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) Linux ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) *(Debian Based: Preferably [Ubuntu](https://www.ubuntu.com/))* <br> ***(As of testing, Kali Linux does not work with this tool!)***
+* ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) Linux ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) *(Debian Based: Preferably [Kali Linux](https://www.kali.org/))*
 
 Packages:
 * [googler](https://github.com/jarun/googler)
