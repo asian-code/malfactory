@@ -62,9 +62,9 @@ Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/sh
 
 ## <p align="center"> <p align="center"> <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> &nbsp; Contributing &nbsp; <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> </p>
 
-Please read [CONTRIBUTING.md](https://github.com/asian-code/Malfactory/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/asian-code/malfactory/blob/master/docs/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-This project also has a CODE OF CONDUCT for contributers - see the [CODE_OF_CONDUCT.md](https://github.com/asian-code/Malfactory/blob/master/CODE_OF_CONDUCT.md) file for details.
+This project also has a CODE OF CONDUCT for contributers - see the [CODE_OF_CONDUCT.md](https://github.com/asian-code/malfactory/blob/master/docs/CODE_OF_CONDUCT.md) file for details.
 
 See also the list of contributors who participated in this project.
 
@@ -72,6 +72,6 @@ See also the list of contributors who participated in this project.
 
 ## <p align="center"> <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> </p>
 
-This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/Malfactory/blob/master/LICENSE) file for details.
+This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/malfactory/blob/master/docs/LICENSE) file for details.
 
 ------------------------------------------------------------------------
