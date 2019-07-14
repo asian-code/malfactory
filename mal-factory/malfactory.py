@@ -20,8 +20,8 @@ def main():
             command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
             if command == "1":
                 print("")
-            elif command == "clear":
-                clear()
+            elif command == "r":
+                core.clear()
                 random_logo()
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 quit()
@@ -33,5 +33,11 @@ def main():
         print("[ " + red + bold + "!" + rr + "] Error :")
         raise
 
-
-main()
+def startup():
+    core.clear()
+    core.randomlogo()
+    core.textlogo()
+    options()
+    main()
+    
+startup()
