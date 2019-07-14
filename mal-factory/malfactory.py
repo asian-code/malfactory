@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import core
+import maleditor
 
 green = core.lgreen
 purple = core.lpurple
@@ -26,7 +27,7 @@ def main():
         while True:
             command = input(red + "Mal" + cyan + "Factory " + blue + "> " + rr)
             if command == "1":
-                print("")
+                maleditor.startup()
             elif command == "r":
                 core.clear()
                 startup()
