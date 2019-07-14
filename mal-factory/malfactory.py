@@ -3,39 +3,48 @@
 import core
 
 green = core.lgreen
-lpurple = core.lpurple
+purple = core.lpurple
+red = core.lred
+blue = core.lblue
+cyan = core.lcyan
+rr = core.rr
+bold = core.bold
+ul = core.ul
+line = purple + bold + "--------------------------------------------------------------------------------------" + rr
 
 def options():
-    print(rr + "[" + purple + "1" + rr + "]\t Malware Terminal IDE")
-    print("[" + lpurple + "2" + rr + "]\t Basic Malware Templates")
-    print("[" + lpurple + "3" + rr + "]\t Spoof Email / Send Malware")
-    print("[" + lpurple + "r" + rr + "]\t Reloads the screen")
-    print("[" + lpurple + "99" + rr + "]\t Exit")
+    print(" " + ul + "Please Select From The Menu" + rr + "\n")
+    print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
+    print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
+    print("   [" + purple + "3" + rr + "]\t Spoof Email / Send Malware")
+    print("   [" + purple + "r" + rr + "]\t Reloads the screen")
+    print("   [" + purple + "99" + rr + "]\t Exit \n")
 
 
 def main():
-    core.random_logo()
     try:
         while True:
-            command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
+            command = input(red + "Mal" + cyan + "Factory " + blue + "> " + rr)
             if command == "1":
                 print("")
             elif command == "r":
                 core.clear()
-                random_logo()
+                startup()
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
-                quit()
+                core.quit()
             else:
-                print(red + bold + "Error " + rr + command)
+                print(rr + "\nSorry, " + command + "is not a command.\n")
     except KeyboardInterrupt:
-        print(l + "+\n[+] Exiting program" + rr)
+        core.quit()
     except Exception:
-        print("[ " + red + bold + "!" + rr + "] Error :")
+        print(rr + "\n[" + red + "+" + rr + "] Error: Could not run program. Have you installed all the dependencies?" + rr + "\n")
         raise
 
 def startup():
     core.clear()
+    print(line)
     core.randomlogo()
+    print(line + "\n")
     core.textlogo()
     options()
     main()
