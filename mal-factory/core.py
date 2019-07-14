@@ -161,33 +161,3 @@ def logo3():
                                            █████            
                                               ███           
 """)
-
-
-def options():
-    print(rr + "[" + lcyan + bold + "1" + rr + "]\t -Malmaker text editor(Coming soon)")
-    print("[" + lcyan + bold + "clear" + rr + "]\t -Clear screen")
-    print("[" + lcyan + bold + "99" + rr + "]\t -Exit")
-
-
-def main():
-    random_logo()
-    try:
-        while True:
-            command = input(red + bold + "Mal" + white + bold + "factory >" + rr)
-            if command == "1":
-                print(green + bold + "[-] Feature coming soon" + rr)
-            elif command == "clear":
-                clear()
-                random_logo()
-            elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
-                quit()
-            else:
-                print(red + bold + "[-] Invalid command: " + rr + command)
-    except KeyboardInterrupt:
-        print(green + bold + "+\n[+] Exiting program" + rr)
-    except Exception:
-        print("[ " + red + bold + "!" + rr + "] Error :")
-        raise
-
-
-main()
