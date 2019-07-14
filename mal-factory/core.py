@@ -67,7 +67,6 @@ def random_logo():
         logo2()
     elif x == 3:
         logo3()
-    options()
 
 
 def logo1():
