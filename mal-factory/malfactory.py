@@ -50,4 +50,4 @@ def startup():
     options()
     main()
     
-startup()
+
