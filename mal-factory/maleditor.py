@@ -3,6 +3,7 @@
 import os
 import sys
 import core
+import main
 
 rr = core.rr
 red = core.lred
@@ -36,7 +37,7 @@ def main():
                 whole_file.append(command)
                 print_file(whole_file)
         except KeyboardInterrupt:
-           print("add malfactory.startup() here")
+           main.startup()
 
 def startup():
     core.clear()
