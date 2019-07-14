@@ -20,7 +20,8 @@ def print_file(file: list):
     for element in file:
         print(element)
 
-def main():
+def startup():
+    core.clear()
     print("[" + green + "+" + rr + "] Starting Mal-editor... ")
     options()
     whole_file = []
@@ -38,7 +39,3 @@ def main():
                 print_file(whole_file)
         except KeyboardInterrupt:
            main.startup()
-
-def startup():
-    core.clear()
-    main()
