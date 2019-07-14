@@ -2,6 +2,13 @@
 
 import os
 import sys
+import core
+
+rr = core.rr
+red = core.lred
+ul = core.ul
+green = core.lgreen
+blue = core.lblue
 
 def options():
     print("  [-] Options: \n")
@@ -13,13 +20,13 @@ def print_file(file: list):
         print(element)
 
 def main():
-    print("[+] Starting Mal-editor ")
+    print("[" + green + "+" + rr + "] Starting Mal-editor... ")
     options()
     whole_file = []
     try:
         while True:
-           command = input("MalEditor >")
-           if command == "99" or :
+           command = input(red + "Mal" + green + "Editor" + blue + " >")
+           if command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 sys.exit()
            elif command == "2":
                 whole_file.pop()
@@ -29,7 +36,7 @@ def main():
                 whole_file.append(command)
                 print_file(whole_file)
         except KeyboardInterrupt:
-            sys.exit()
+           print("add malfactory.startup() here")
 
 def startup():
     core.clear()
