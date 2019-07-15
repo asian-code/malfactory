@@ -13,9 +13,9 @@ blue = core.lblue
 
 
 def options():
-    print("\t\t" + ul + "Options: " + rr + "\n")
+    print("\t" + ul + "Options" + rr + ":")
     print("\t{}\t\t{}".format("[s] Save file", "[u] Undo last line"))
-    print("\t{}\t\t{}".format("[o] Open from txt file", "[e] Exit MalEditor"))
+    print("\t{}  {}".format("[o] Open from txt file", "[e] Exit MalEditor"))
 
 
 def show_file(file: list):
@@ -25,17 +25,18 @@ def show_file(file: list):
 
 def check_command(com):
     with open("allcmds.txt", "r") as f:
-        all_commands = f.readlines()
-        # test
-        for i in all_commands:
-            print(i)
-        # test
-        """
+        all_commands = f.read()
+
+        '''       
+         for i in all_commands:
+                        print(i, end="")
+        '''
+
         if com in all_commands:
             return True
-        """
         f.close()
     return False
+
 
 def startup():
     print("[" + green + "+" + rr + "] Starting Mal-editor... ")
@@ -59,5 +60,5 @@ def startup():
     except KeyboardInterrupt:
         main.startup()
     except Exception:
-        print("[!] Error in MalEditor")
+        print(red + core.bold + "[!] Error in MalEditor")
         raise
