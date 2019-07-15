@@ -11,7 +11,9 @@
 
 **By:** [lin8x](https://www.github.com/lin8x) & [asian-code](https://www.github.com/asian-code)
 
-The purpose of the tool, “Malfactory”, is to help upcomming reverse engineers, malware analysts, and geeks to discover how the creation of malware works. Malfactory simplifies the creation of any type of malware but allowing for our own easy code, “malcode”, to be translated to bash/batch code.
+The purpose of the tool, “Malfactory”, is to help upcomming reverse engineers, malware analysts, and geeks to discover how the creation of malware works. 
+
+Malfactory simplifies the creation of any type of malware by allowing for our own easy code, “malcode”, to be translated to bash/batch code.
 
 ------------------------------------------------------------------------
 
