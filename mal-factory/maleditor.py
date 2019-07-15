@@ -8,24 +8,14 @@ import main
 rr = core.rr
 red = core.lred
 ul = core.ul
-green = core.green
+green = core.lgreen
 blue = core.lblue
 
 
-def clear():
-    os.system("clear")
-
-
 def options():
-    print("\t" + ul + "Options" + rr + ":")
-    print("[" + green + "s" + rr + "] Save file")
-    print("[" + green + "u" + rr + "] Undo last line")
-    print("[" + green + "o" + rr + "] Open from txt file")
-    print("\nCrtl+C or e to exit\n")
-    '''
-    print("\t{0}\t{1}".format("[s] Save file", "[u] Undo last line"))
-    print("\t{0}  {1}\n".format("[o] Open from txt file", "[e] Exit MalEditor"))
-    '''
+    print("\n\t" + ul + "Options" + rr + ":")
+    print("\t{}\t\t{}".format("[" + green + "s" + rr + "] Save file", "\t[" + green + "u" + rr + "] Undo last line"))
+    print("\t{}  {}".format("[" + green + "o" + rr + "] Open from txt file", "\t[" + green + "e" + rr + "] Exit MalEditor \n"))
 
 
 def show_file(file: list):
@@ -47,36 +37,33 @@ def check_command(com):
                 return True
             f.close()
     except Exception:
-        print(red + "[!] Error- could not find allcmds.txt" + rr)
+        print(red + core.bold + "[!] Error- could not find allcmds.txt" + rr)
     return False
 
 
 def startup():
-    print("[" + green + "+" + rr + "] Starting Mal-editor... ")
+    core.clear()
+    print("[" + green + "+" + rr + "]  Starting Mal-editor... ")
+    print("[" + green + "OK" + rr + "] Mal-editor Successfully Started!")
     options()
     whole_file = []
     try:
         while True:
-            command = input(red + "Mal" + green + "Editor" + blue + " > ")
+            command = input(red + "Mal" + green + "Editor" + rr + " > ")
             if command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 sys.exit()
             elif command == "u":
-                clear()
+                core.clear()
                 whole_file.pop()
                 show_file(whole_file)
-            elif command == "s":
-                file_name = input("Filename > ")
-                save_file = open("/root/{}".format(file_name), "w")
-
-                save_file.close()
             elif check_command(command):
-                clear()
+                core.clear()
                 whole_file.append(command)
                 show_file(whole_file)
             else:
-                print(red + "[-] Not a valid command" + rr)
+                print(red + core.bold + "[-] Not a valid command" + rr)
     except KeyboardInterrupt:
         main.startup()
     except Exception:
-        print(red + "[!] Error in MalEditor")
+        print(red + core.bold + "[!] Error in MalEditor")
         raise
