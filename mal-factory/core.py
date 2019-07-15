@@ -72,6 +72,18 @@ def quit():
     clear()
     print(rr + "[" + lred + "+" + rr + "] Exiting program...." + rr)
     exit()
+    
+def gmailname():
+  print("")
+  print(blue + """███████████""")
+  print(blue + "██" + white + "███████" + blue + "██" + yellow + "                     ██ ██")
+  print(blue + "█" + white + "███" + blue + "   " + white + "███" + blue + "█" + white + """                        ██""")
+  print(blue + "█" + white + "█  " + blue + "      " + blue + "█" + yellow + " ██████████ ████████ ██ ██")
+  print(blue + "█" + white + "██" + blue + "  " + white + "██████" + blue + "" + white + " ██████████ ███  ███ ██ ██")
+  print(blue + "█" + white + "███" + blue + "   " + white + "███" + blue + "█" + yellow + " ██  ██  ██ ███  ███ ██ ██")
+  print(blue + "██" + white + "███████" + blue + "██" + white + " ██  ██  ██ ████████ ██ ██")
+  print(blue + "███████████" + r + "") 
+
 
 def gmaillogo():
   print(white + "")
