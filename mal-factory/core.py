@@ -73,6 +73,26 @@ def quit():
     print(rr + "[" + lred + "+" + rr + "] Exiting program...." + rr)
     exit()
 
+def gmaillogo():
+  print(white + "")
+  print(blue + "███" + white + "█████████████████████████████████" + blue + "███")
+  print(blue + "████" + white + "███████████████████████████████" + blue + "████")
+  print(blue + "███████" + white + "█████████████████████████" + blue + "███████")
+  print(blue + "██████████" + white + "███████████████████" + blue + "██████████")
+  print(blue + "█████████████" + white + "█████████████" + blue + "█████████████")
+  print(blue + "█████" + white + "███" + blue + "████████" + white + "███████" + blue + "████████" + white + "███" + blue + "█████")
+  print(blue + "█████" + white + "██████" + blue + "████████" + white + "█" + blue + "████████" + white + "██████" + blue + "█████")
+  print(blue + "█████" + white + "█████████" + blue + "██████████(" + white + "█████████" + blue + "█████")
+  print(blue + "█████" + white + "███████████" + blue + "*████(" + white + "████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████" + blue + "███" + white + "█████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+  print(blue + "█████" + white + "█████████████████████████████" + blue + "█████")
+    
 def logo1():
     print(lgreen + """
                                                 ██████         ██████
