@@ -2,6 +2,7 @@
 
 import core
 import maleditor
+import os
 
 green = core.lgreen
 purple = core.lpurple
@@ -12,6 +13,7 @@ rr = core.rr
 bold = core.bold
 ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
+
 
 def options():
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
@@ -38,13 +40,16 @@ def main():
     except KeyboardInterrupt:
         core.quit()
     except Exception:
-        print(rr + "\n[" + red + "+" + rr + "] Error: Could not run program. Have you installed all the dependencies?" + rr + "\n")
+        print(
+            rr + "\n[" + red + "+" + rr + "] Error: Could not run program. Have you installed all the dependencies?" + rr + "\n")
         raise
 
+
 def startup():
-    # resize -s 35 100
-    core.os.system(" printf '\e[8;35;100t'") # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
-    
+    # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
+    # another way to resize terminal(it doesnt work on all terminal emulators ) resize -s 35 100
+
+    os.system('\e[8;35;100t')
     core.clear()
     print(line)
     core.randomlogo()
@@ -52,5 +57,3 @@ def startup():
     core.textlogo()
     options()
     main()
-    
-
