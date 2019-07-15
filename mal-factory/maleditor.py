@@ -24,17 +24,20 @@ def show_file(file: list):
 
 
 def check_command(com):
-    with open("allcmds.txt", "r") as f:
-        all_commands = f.read()
+    try:
+        with open("/usr/share/mal-factory/allcmds.txt", "r") as f:
+            all_commands = f.read()
 
-        '''       
-         for i in all_commands:
-                        print(i, end="")
-        '''
+            '''       
+             for i in all_commands:
+                            print(i, end="")
+            '''
 
-        if com in all_commands:
-            return True
-        f.close()
+            if com in all_commands:
+                return True
+            f.close()
+    except Exception:
+        print(red + core.bold + "[!] Error- could not find allcmds.txt" + rr)
     return False
 
 
