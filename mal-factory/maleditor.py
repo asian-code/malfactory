@@ -13,9 +13,9 @@ blue = core.lblue
 
 
 def options():
-    print("   \t\tOptions: \n")
-    print("  \t[s] Save file \t\t\t[u] Undo last line")
-    print("  \t[o] Open from txt file \t\t\t[e] Exit MalEditor")
+    print("\t\t" + ul + "Options: " + rr + "\n")
+    print("\t{}\t\t{}".format("[s] Save file", "[u] Undo last line"))
+    print("\t{}\t\t{}".format("[o] Open from txt file", "[e] Exit MalEditor"))
 
 
 def show_file(file: list):
