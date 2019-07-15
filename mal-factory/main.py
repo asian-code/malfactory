@@ -51,7 +51,7 @@ def main():
 
 def startup():
     # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
-    os.system("resize -s 40 100")
+    os.system("resize -s 40 86")
     core.clear()
     print(line)
     core.randomlogo()
