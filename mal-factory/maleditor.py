@@ -59,3 +59,6 @@ def startup():
                 print(red + core.bold + "[-] Not a valid command" + rr)
     except KeyboardInterrupt:
         main.startup()
+    except Exception:
+        print("[!] Error in MalEditor")
+        raise
