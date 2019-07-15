@@ -45,7 +45,7 @@ def main():
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 core.quit()
             else:
-                print(rr + "\nSorry, " + command + "is not a command.\n")
+                print(rr + "\nSorry, " + command + " is not a command.\n")
     except KeyboardInterrupt:
         core.quit()
     except Exception:
