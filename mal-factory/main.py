@@ -6,6 +6,7 @@ import gmailemail
 import os
 
 green = core.lgreen
+yellow = core.yellow
 purple = core.lpurple
 red = core.lred
 blue = core.lblue
@@ -22,7 +23,7 @@ def clear():
 
 
 def options():
-    print(" " + rr + "Tool Version: " + yellow + bold + "1.1? ERIC CHANGE IT DAMN IT" + rr + "\n") #ERIC CHANGE ME
+    print(" " + purple + bold + "Tool Version: " + rr + "1.1? ERIC CHANGE IT DAMN IT\n") #ERIC CHANGE ME! Change the version to a variable or something
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
