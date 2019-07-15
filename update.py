@@ -62,6 +62,7 @@ try:
 
 except:
     had_error = True
+    raise
 
 finally:
     if had_error:
