@@ -12,6 +12,10 @@ green = core.lgreen
 blue = core.lblue
 
 
+def clear():
+    clear()
+
+
 def options():
     print("\t" + ul + "Options" + rr + ":")
     print("\t{}\t\t{}".format("[s] Save file", "[u] Undo last line"))
@@ -51,11 +55,11 @@ def startup():
             if command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 sys.exit()
             elif command == "u":
-                main.clear()
+                clear()
                 whole_file.pop()
                 show_file(whole_file)
             elif check_command(command):
-                main.clear()
+                clear()
                 whole_file.append(command)
                 show_file(whole_file)
             else:
