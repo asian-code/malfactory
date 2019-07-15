@@ -11,6 +11,8 @@
 
 **By:** [lin8x](https://www.github.com/lin8x) & [asian-code](https://www.github.com/asian-code)
 
+The purpose of the tool, “Malfactory”, is to help upcomming reverse engineers, malware analysts, and geeks to discover how the creation of malware works. Malfactory simplifies the creation of any type of malware but allowing for our own easy code, “malcode”, to be translated to bash/batch code.
+
 ------------------------------------------------------------------------
 
 ## <p align="center"> <img src="https://i.ibb.co/GPtkjY1/60889-200-29x29.png" alt="googleot" width="20" height="20"> &nbsp; Requirements &nbsp; <img src="https://i.ibb.co/GPtkjY1/60889-200-29x29.png" alt="googleot" width="20" height="20"> </p>
