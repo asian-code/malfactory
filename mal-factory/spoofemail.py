@@ -101,7 +101,7 @@ def authenticate(username, password):
   except smtplib.SMTPAuthenticationError:
       clear()
       core.gmaillogo()
-      core.name()
+      core.gmailgmailname()
       print(core.lcyan + core.bold + "\nUTHENTICATION ERORR!:\n")
       print (core.lblue + "Cannot sign in. Are you sure this account exists?:" + core.r)
       print("\nRight now, the reason you may not log-into your gmail account (if your cresidentials are right) is because google sees this form of authentication as 'less secure'.\n")
@@ -133,7 +133,7 @@ def startup():
   try:
     clear()
     core.gmaillogo()
-    core.name()
+    core.gmailname()
     print("")
     print("(Username Ex: username@gmail.com)")
     print("(Password Ex: password1234)")
