@@ -51,9 +51,7 @@ def main():
 
 def startup():
     # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
-    # another way to resize terminal(it doesnt work on all terminal emulators ) resize -s 35 100
-
-    os.system('printf \e[8;35;100t')
+    os.system("resize -s 40 100")
     core.clear()
     print(line)
     core.randomlogo()
