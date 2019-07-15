@@ -28,7 +28,7 @@ Malfactory also allows upcomming analysts to see how programs can be spread thro
 Operating System:
 * ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) Mac OS ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) *(Requires [Brew](https://brew.sh/))*
 * ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) Linux ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) *(Debian Based: Preferably [Kali Linux](https://www.kali.org/))*
-* <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15"> Android <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15">
+* <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15"> Android <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15"> *(Requires [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_US))*
 
 Packages:
 * python3
