@@ -8,18 +8,24 @@ import main
 rr = core.rr
 red = core.lred
 ul = core.ul
-green = core.lgreen
+green = core.green
 blue = core.lblue
 
 
 def clear():
-    clear()
+    os.system("clear")
 
 
 def options():
     print("\t" + ul + "Options" + rr + ":")
-    print("\t{}\t\t{}".format("[s] Save file", "[u] Undo last line"))
-    print("\t{}  {}".format("[o] Open from txt file", "[e] Exit MalEditor"))
+    print("[" + green + "s" + rr + "] Save file")
+    print("[" + green + "u" + rr + "] Undo last line")
+    print("[" + green + "o" + rr + "] Open from txt file")
+    print("\nCrtl+C or e to exit\n")
+    '''
+    print("\t{0}\t{1}".format("[s] Save file", "[u] Undo last line"))
+    print("\t{0}  {1}\n".format("[o] Open from txt file", "[e] Exit MalEditor"))
+    '''
 
 
 def show_file(file: list):
@@ -41,7 +47,7 @@ def check_command(com):
                 return True
             f.close()
     except Exception:
-        print(red + core.bold + "[!] Error- could not find allcmds.txt" + rr)
+        print(red + "[!] Error- could not find allcmds.txt" + rr)
     return False
 
 
@@ -58,14 +64,19 @@ def startup():
                 clear()
                 whole_file.pop()
                 show_file(whole_file)
+            elif command == "s":
+                file_name = input("Filename > ")
+                save_file = open("/root/{}".format(file_name), "w")
+
+                save_file.close()
             elif check_command(command):
                 clear()
                 whole_file.append(command)
                 show_file(whole_file)
             else:
-                print(red + core.bold + "[-] Not a valid command" + rr)
+                print(red + "[-] Not a valid command" + rr)
     except KeyboardInterrupt:
         main.startup()
     except Exception:
-        print(red + core.bold + "[!] Error in MalEditor")
+        print(red + "[!] Error in MalEditor")
         raise
