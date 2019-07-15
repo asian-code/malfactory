@@ -13,7 +13,7 @@ blue = core.lblue
 
 
 def options():
-    print("\n\t" + ul + "Options" + rr + ":")
+    print(rr + "\n\t" + ul + "Options" + rr + ":")
     print("\t{}\t\t{}".format("[" + green + "s" + rr + "] Save file", "\t[" + green + "u" + rr + "] Undo last line"))
     print("\t{}  {}".format("[" + green + "o" + rr + "] Open from txt file", "\t[" + green + "e" + rr + "] Exit MalEditor \n"))
 
@@ -37,7 +37,7 @@ def check_command(com):
                 return True
             f.close()
     except Exception:
-        print(red + core.bold + "[!] Error- could not find allcmds.txt" + rr)
+        print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
     return False
 
 
@@ -45,6 +45,7 @@ def startup():
     core.clear()
     print("[" + green + "+" + rr + "]  Starting Mal-editor... ")
     print("[" + green + "OK" + rr + "] Mal-editor Successfully Started!")
+    core.maleditorlogo()
     options()
     whole_file = []
     try:
@@ -61,7 +62,7 @@ def startup():
                 whole_file.append(command)
                 show_file(whole_file)
             else:
-                print(red + core.bold + "[-] Not a valid command" + rr)
+                print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
     except KeyboardInterrupt:
         main.startup()
     except Exception:
