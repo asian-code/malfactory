@@ -10,7 +10,7 @@ had_error = False
 app_name = "Malfactory"
 try:
     os.system("sudo rm -rf /usr/share/mal-factory")  # folder
-    print("[+] removed " + app_name + " folder in /usr/share/simple-scan")
+    print("[+] removed " + app_name + " folder in /usr/share/mal-factory")
 
     os.system("sudo rm -rf /usr/share/applications/malfactory.desktop")  # desktop file
     print("[+] removed desktop file in /usr/share/applications/malfactory.desktop")
