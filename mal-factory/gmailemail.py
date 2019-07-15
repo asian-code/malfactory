@@ -8,6 +8,7 @@ import smtplib
 import imaplib
 import core
 import main
+import os
 
 # defines the server for gmail
 server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -22,7 +23,8 @@ url = "https://mail.google.com/mail/u/0/#inbox"
 
 # CLEARS THE SCREEN
 def clear():
-    main.clear()
+    for i in range(4):
+        os.system("clear")
 
 
 def quit():
