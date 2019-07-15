@@ -22,6 +22,7 @@ def clear():
 
 
 def options():
+    print(" " + rr + "Tool Version: " + yellow + bold + "1.1? ERIC CHANGE IT DAMN IT" + rr + "\n") #ERIC CHANGE ME
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
