@@ -24,14 +24,16 @@ def show_file(file: list):
 
 
 def check_command(com):
-    with open("allcommands.txt", "r") as f:
+    with open("allcmds.txt", "r") as f:
         all_commands = f.readlines()
         # test
         for i in all_commands:
             print(i)
         # test
+        """
         if com in all_commands:
             return True
+        """
         f.close()
     return False
 
@@ -42,7 +44,7 @@ def startup():
     whole_file = []
     try:
         while True:
-            command = input(red + "Mal" + green + "Editor" + blue + " >")
+            command = input(red + "Mal" + green + "Editor" + blue + " > ")
             if command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 sys.exit()
             elif command == "u":
@@ -54,6 +56,6 @@ def startup():
                 whole_file.append(command)
                 show_file(whole_file)
             else:
-                print(red + core.bold + "Not a valid command" + rr)
+                print(red + core.bold + "[-] Not a valid command" + rr)
     except KeyboardInterrupt:
         main.startup()
