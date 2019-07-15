@@ -9,7 +9,7 @@
 
 ## <p align="center"> <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> &nbsp; About Malfactory &nbsp; <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> </p>
 
-**Disclaimer: DEVELOPERS AND CONTRIBUTORS ARE NOT RESPONSIBLE FOR WHAT YOU DO WITH THIS TOOL!**
+**Disclaimer: <br> DEVELOPERS AND CONTRIBUTORS ARE NOT RESPONSIBLE FOR WHAT YOU DO WITH THIS TOOL!**
 
 Developer Team:
 - [lin8x](https://www.github.com/lin8x) 
