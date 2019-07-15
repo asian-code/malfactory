@@ -29,7 +29,7 @@ def options():
 def main():
     try:
         while True:
-            command = input(red + "Mal" + cyan + "Factory " + blue + "> " + rr)
+            command = input(red + "Mal" + purple + "Factory" + rr + " > " )
             if command == "1":
                 maleditor.startup()
             if command == "3":
