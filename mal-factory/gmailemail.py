@@ -85,6 +85,7 @@ def login():
         gmail_sender = str(gmail_sender)
         gmail_passwd = input("Please enter your password: " + core.invis)
         gmail_passwd = str(gmail_passwd)
+        print(rr + "")
         if gmail_sender == "" or gmail_passwd == "":
             print(core.r + "\nSorry! You used an unknown character. Please type in your credentials correctly!")
             input("Please press {ENTER} to continue... " + core.invis)
@@ -132,6 +133,7 @@ so sit back, relax, and grab a coffee.""")
         print(
             "\n(I personally found that this works best on chrome after signing into my gmail and then clicking on the link.)\n")
         input(core.invis + "Please press {ENTER} to continue... ")
+        print(rr + "")
         clear()
         startup()
 
