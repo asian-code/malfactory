@@ -4,7 +4,6 @@
 #server.login(gmail_sender, gmail_passwd)
 #server.sendmail(gmail_sender, [TO], BODY)
 
-import sys
 import smtplib
 import os 
 import imaplib          
