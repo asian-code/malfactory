@@ -50,7 +50,7 @@ try:
 
     time.sleep(1)
     # move new version to the location of old installation folder
-    subprocess.call("sudo mv /usr/var/mal-factory {}".format(install_location), shell=True)
+    subprocess.call("sudo mv /usr/var/malfactory {}".format(install_location), shell=True)
     print(green + bold + "[+] Moved new files to correct location" + rr)
 
     time.sleep(1)
