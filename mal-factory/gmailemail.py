@@ -36,15 +36,14 @@ def inbox(username, password):
         print("\n-----------\n")
         print(core.ul + "The Help/Command Menu" + core.r)
         print("\nhelp - Opens this help menu")
-        print("send <spoofemail@fakewebsite.com> <sendingto@gmail.com> - Send an email with your gmail account")
+        print("send <sendingto@gmail.com> - Send an email with your gmail account")
         print("exit - Go back to the homepage")
         print("\n-----------\n")
       elif answer[0] == "exit":
         main.startup()
       elif answer[0] == "send":
         try:
-           FROM = answer[1]
-           TO = answer[2]
+           TO = answer[1]
            SUBJECT = input("\nSubject: ")
            print("\n--- Type 'quit' to Finish! ---")
            TEXT = ""
@@ -57,7 +56,7 @@ def inbox(username, password):
               TEXT = TEXT + message +"\n"
               x += 1
            BODY = '\r\n'.join(['To: %s' % TO,
-           'From: %s' % FROM,
+           'From: %s' % username,
            'Subject: %s' % SUBJECT,
            '', TEXT])
            try:
