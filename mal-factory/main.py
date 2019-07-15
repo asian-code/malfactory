@@ -2,6 +2,7 @@
 
 import core
 import maleditor
+import spoofemail
 import os
 
 green = core.lgreen
@@ -30,6 +31,8 @@ def main():
             command = input(red + "Mal" + cyan + "Factory " + blue + "> " + rr)
             if command == "1":
                 maleditor.startup()
+            if command == "3":
+                spoofemail.startup()
             elif command == "r":
                 core.clear()
                 startup()
