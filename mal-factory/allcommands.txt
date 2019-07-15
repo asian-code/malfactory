@@ -1,0 +1,4 @@
+//all commands will have () at the end for arguments exp: wait(5)
+wait
+cmd
+remove
