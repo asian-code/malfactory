@@ -101,7 +101,7 @@ def authenticate(username, password):
       inbox(username, password)
   except smtplib.SMTPAuthenticationError:
       clear()
-      core.logo()
+      core.gmaillogo()
       core.name()
       print(core.lcyan + core.bold + "\nUTHENTICATION ERORR!:\n")
       print (core.lblue + "Cannot sign in. Are you sure this account exists?:" + core.r)
@@ -133,7 +133,7 @@ so sit back, relax, and grab a coffee.""")
 def startup():
   try:
     clear()
-    core.logo()
+    core.gmaillogo()
     core.name()
     print("")
     print("(Username Ex: username@gmail.com)")
