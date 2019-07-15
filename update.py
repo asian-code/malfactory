@@ -65,6 +65,6 @@ except:
 
 finally:
     if had_error:
-        print(red + bold + "[!] Error updating Simple-Scanner" + rr)
+        print(red + bold + "[!] Error updating "+app_name + rr)
     else:
         print(green + bold + "[ OK ] Update complete!!\n" + rr)
