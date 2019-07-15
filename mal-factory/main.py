@@ -2,7 +2,7 @@
 
 import core
 import maleditor
-import spoofemail
+import gmailemail
 import os
 
 green = core.lgreen
@@ -20,7 +20,8 @@ def options():
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
-    print("   [" + purple + "3" + rr + "]\t Spoof Email / Send Malware")
+    print("   [" + purple + "3" + rr + "]\t Send Malware With Email (gmail)")
+    print("   [" + purple + "5" + rr + "]\t Send Malware With a Spoofed Email")
     print("   [" + purple + "r" + rr + "]\t Reloads the screen")
     print("   [" + purple + "99" + rr + "]\t Exit \n")
 
@@ -32,7 +33,7 @@ def main():
             if command == "1":
                 maleditor.startup()
             if command == "3":
-                spoofemail.startup()
+                gmailemail.startup()
             elif command == "r":
                 core.clear()
                 startup()
