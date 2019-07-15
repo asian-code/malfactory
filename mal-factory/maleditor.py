@@ -11,31 +11,49 @@ ul = core.ul
 green = core.lgreen
 blue = core.lblue
 
-def options():
-    print("  [-] Options: \n")
-    print("  [s] Save file \t [u] Undo last line")
-    print("  [o] Open from txt file \t [e] Exit MalEditor")
 
-def print_file(file: list):
+def options():
+    print("   \t\tOptions: \n")
+    print("  \t[s] Save file \t\t[u] Undo last line")
+    print("  \t[o] Open from txt file \t\t[e] Exit MalEditor")
+
+
+def show_file(file: list):
     for element in file:
         print(element)
 
+
+def check_command(com):
+    with open("allcommands.txt", "r") as f:
+        all_commands = f.readlines()
+        # test
+        for i in all_commands:
+            print(i)
+        # test
+        if com in all_commands:
+            return True
+        f.close()
+    return False
+
+
 def startup():
-    core.clear()
     print("[" + green + "+" + rr + "] Starting Mal-editor... ")
     options()
     whole_file = []
     try:
         while True:
-           command = input(red + "Mal" + green + "Editor" + blue + " >")
-           if command == "99" or command.lower() == "exit" or command.lower() == "quit":
+            command = input(red + "Mal" + green + "Editor" + blue + " >")
+            if command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 sys.exit()
-           elif command == "2":
+            elif command == "u":
+                main.clear()
                 whole_file.pop()
-                print_file(whole_file)
-           else:
-                clear()
+                show_file(whole_file)
+            elif check_command(command):
+                main.clear()
                 whole_file.append(command)
-                print_file(whole_file)
-        except KeyboardInterrupt:
-           main.startup()
+                show_file(whole_file)
+            else:
+                print(red + core.bold + "Not a valid command" + rr)
+    except KeyboardInterrupt:
+        main.startup()
