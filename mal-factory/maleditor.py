@@ -37,7 +37,6 @@ def check_command(com):
         f.close()
     return False
 
-
 def startup():
     print("[" + green + "+" + rr + "] Starting Mal-editor... ")
     options()
