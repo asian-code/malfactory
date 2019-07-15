@@ -23,7 +23,7 @@ def options():
     print("   [" + purple + "3" + rr + "]\t Send Malware With Email (Gmail w/ S.E Templates)")
     print("   [" + purple + "5" + rr + "]\t Send Malware With a Spoofed Email")
     print("   [" + purple + "r" + rr + "]\t Reloads the screen")
-    print("   [" + purple + "99" + rr + "]\t Exit \n")
+    print("\n   [" + purple + "99" + rr + "]\t Exit \n")
 
 
 def main():
