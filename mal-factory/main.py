@@ -16,6 +16,11 @@ ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
 
 
+def clear():
+    for i in range(4):
+        os.system("clear")
+
+
 def options():
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
@@ -29,13 +34,13 @@ def options():
 def main():
     try:
         while True:
-            command = input(red + "Mal" + purple + "Factory" + rr + " > " )
+            command = input(red + "Mal" + purple + "Factory" + rr + " > ")
             if command == "1":
                 maleditor.startup()
             if command == "3":
                 gmailemail.startup()
             elif command == "r":
-                core.clear()
+                clear()
                 startup()
             elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
                 core.quit()
@@ -52,7 +57,7 @@ def main():
 def startup():
     # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
     os.system("resize -s 40 86")
-    core.clear()
+    clear()
     print(line)
     core.randomlogo()
     print(line + "\n")
