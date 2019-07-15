@@ -18,7 +18,7 @@ try:
         print("location.txt is located")
 except:
     print(
-        red + bold + "[!] Error -Simple scan was never properly installed to update,\n\tMissing location.txt file" + rr)
+        red + bold + "[!] Error -"+app_name+" was never properly installed to update,\n\tMissing location.txt file" + rr)
     sys.exit()
 
 file = open("location.txt", "r")
