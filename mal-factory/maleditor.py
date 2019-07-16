@@ -21,11 +21,13 @@ def options():
 
 
 def show_file(file: list):
+    num = 1
     marker = "-" * 9
-    print(marker)
+    print(marker + " File " + marker)
     for element in file:
-        print(element)
-    print(marker)
+        print(num + ")" + element)
+        num += 1
+    print(marker + " File " + marker)
 
 
 def check_command(com):
@@ -60,17 +62,31 @@ def startup():
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
-            if command == "99" or command.lower() == "exit" or command.lower() == "quit":
+            if command == "99" or command.lower() == "exit" or command.lower() == "quit" or command.lower() == "e":
                 sys.exit()
             elif command == "u":
                 core.clear()
                 whole_file.pop()
                 show_file(whole_file)
+            elif command == "s":
+                try:
+                    filename = input("[*] File name > ")
+                    file = open("/root/{}".format(filename), "w")
+                    for element in whole_file:
+                        file.write(element)
+                except Exception:
+                    print("[!] Error saving file as " + filename)
+                finally:
+                    file.close()
+                print("[ OK ] File saved in /root/{}".format(filename))
             elif check_command(command):
                 core.clear()
+                options()
                 whole_file.append(command)
                 show_file(whole_file)
             else:
+                core.clear()
+                show_file(whole_file)
                 print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
     except KeyboardInterrupt:
         main.startup()
