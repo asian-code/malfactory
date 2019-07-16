@@ -32,13 +32,14 @@ def check_command(com):
     try:
         file = open("/usr/share/mal-factory/allcmds.txt", "r")
         all_commands = file.readlines()
+        allcmd_filtered = []
 
         print(list(all_commands))
+        # remove the \n on all elements
+        for i in all_commands:
+            allcmd_filtered.append(i.split("\\")[0])
 
-        for i in range(len(all_commands)):
-            all_commands[i] = all_commands[i].split("\\")[0]
-
-        print(list(all_commands))
+        print(list(allcmd_filtered))
 
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
@@ -47,11 +48,11 @@ def check_command(com):
         file.close()
 
     # testing code{
-    with open("/root/tfincmd.txt", "w") as testfile:
-        for i in all_commands:
-            testfile.write(i)
-        testfile.close()
-    print("Testing code done")
+    # with open("/root/tfincmd.txt", "w") as testfile:
+    #     for i in all_commands:
+    #         testfile.write(i)
+    #     testfile.close()
+    # print("Testing code done")
     # }testing code
 
     if com in all_commands:
