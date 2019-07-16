@@ -2,16 +2,24 @@
 
 import os
 import sys
-from typing import List
-
 import core
 import main
+import re
+from urllib.request import urlopen
 
 rr = core.rr
 red = core.lred
 ul = core.ul
 green = core.lgreen
 blue = core.lblue
+
+
+def get_tool_version():
+    html = urlopen("https://malfactory.000webhostapp.com/")
+    website = str(html.read())
+    print(website)
+    search_results = re.search(r"(:\d*\.\d)", website)
+    print(search_results)
 
 
 def options():
@@ -36,7 +44,7 @@ def show_file(file: list):
 def read_from_file(location: str):
     try:
         file = open(location, "r")
-        content: List[str] = file.readlines()
+        content = file.readlines()
         return content
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find file in {}".format(location) + rr)
