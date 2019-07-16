@@ -32,6 +32,7 @@ def check_command(com):
     try:
         with open("/usr/share/mal-factory/allcmds.txt", "r") as f:
             all_commands = f.readlines()
+            print("wtf in commands txt :"+all_commands)
             f.close()
             # testing code{
             with open("/root/tfincmd.txt", "w")as testfile:
