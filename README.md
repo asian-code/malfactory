@@ -5,7 +5,7 @@
 <a href="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" target="_blank"><img src="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" border="0" alt="malfactoryboard" width="450" height="350"></a>
 </p>
 
-~**<p align="center"> Tool version: 0.1 </p>**~
+__<p align="center"> Tool version: 0.1 </p>__
 
 ------------------------------------------------------------------------
 
