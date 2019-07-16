@@ -14,10 +14,10 @@ blue = core.lblue
 
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
-    print(
-        "{}\t\t{}".format("  [" + green + "s" + rr + "] Save file", "\t\t  [" + green + "u" + rr + "] Undo last line"))
+    print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file",
+          "\t\t  [" + green + "r" + rr + "] Remove a line"))
     print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file",
-                          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
+          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
 
 
 def show_file(file: list):
@@ -75,10 +75,10 @@ def startup():
                     for element in whole_file:
                         file.write(element)
                 except Exception:
-                    print("[!] Error saving file as " + filename)
+                    print(red + "[!] Error saving file as " + filename + rr)
                 finally:
                     file.close()
-                print("[ OK ] File saved in /root/{}".format(filename))
+                print(green + "[ OK ] File saved in /root/{}".format(filename) + rr)
             elif check_command(command):
                 core.clear()
                 options()
