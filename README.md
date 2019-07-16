@@ -5,6 +5,8 @@
 <a href="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" target="_blank"><img src="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" border="0" alt="malfactoryboard" width="450" height="350"></a>
 </p>
 
+<p align="center"> Tool version: |0.1| </p>
+
 ------------------------------------------------------------------------
 
 ## <p align="center"> <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> &nbsp; About Malfactory &nbsp; <img src="https://i.ibb.co/7KvXh8Z/26162-200-1-30x30.png" alt="googleot" width="20" height="20"> </p>
@@ -14,8 +16,7 @@
 Developer Team:
 - [lin8x](https://www.github.com/lin8x) 
 - [asian-code](https://www.github.com/asian-code)
-Tool version: |0.1|
-<br>
+
 The purpose of the tool, “Malfactory”, is to help upcomming reverse engineers, malware analysts, and geeks to discover how the creation of malware works. 
 
 Malfactory simplifies the creation of any type of malware by allowing for our own easy code, “malcode”, to be translated to bash/batch code.
