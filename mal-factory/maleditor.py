@@ -34,13 +34,9 @@ def check_command(com):
         all_commands = file.readlines()
         allcmd_filtered = []
 
-        print(list(all_commands))
-        # remove the \n on all elements
+        # remove the \n on all elements by removing the last 2 character in each element
         for i in all_commands:
-            print(i.split("\\")[0])
-            # allcmd_filtered.append(i.split("\\")[0])
-
-        # print(list(allcmd_filtered))
+            allcmd_filtered.append(i[:len(i) - 1])
 
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
@@ -48,15 +44,7 @@ def check_command(com):
     finally:
         file.close()
 
-    # testing code{
-    # with open("/root/tfincmd.txt", "w") as testfile:
-    #     for i in all_commands:
-    #         testfile.write(i)
-    #     testfile.close()
-    # print("Testing code done")
-    # }testing code
-
-    if com in all_commands:
+    if com in allcmd_filtered:
         return True
 
     return False
