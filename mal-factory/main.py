@@ -30,7 +30,7 @@ def options():
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
     print("   [" + purple + "3" + rr + "]\t Send Malware With Email w/ Gmail")
     print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
-    rint("   [" + purple + "u" + rr + "]\t Updates The Tool")
+    print("   [" + purple + "u" + rr + "]\t Updates The Tool")
     print("\n   [" + purple + "99" + rr + "]\t Exit \n")
 
 
