@@ -52,8 +52,7 @@ def main():
     except KeyboardInterrupt:
         core.quit()
     except Exception:
-        print(
-            rr + "\n[" + red + "+" + rr + "] Error: Could not run program. Have you installed all the dependencies?" + rr + "\n")
+        print(rr + "\n[" + red + "+" + rr + "] Error: something went wrong \n")# Need general error message since this try is the whole program instead of a specific block of code
         raise
 
 
