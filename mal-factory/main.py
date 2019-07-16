@@ -28,9 +28,9 @@ def options():
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
-    print("   [" + purple + "3" + rr + "]\t Send Malware With Email (Gmail w/ S.E Templates)")
-    print("   [" + purple + "5" + rr + "]\t Send Malware With a Spoofed Email")
-    print("   [" + purple + "r" + rr + "]\t Reloads the screen")
+    print("   [" + purple + "3" + rr + "]\t Send Malware With Email w/ Gmail")
+    print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
+    rint("   [" + purple + "u" + rr + "]\t Updates The Tool")
     print("\n   [" + purple + "99" + rr + "]\t Exit \n")
 
 
