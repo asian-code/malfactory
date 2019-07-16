@@ -34,11 +34,11 @@ def check_command(com):
         all_commands = file.readlines()
 
         print(list(all_commands))
-        ele = 0
-        while ele < len(all_commands):
-            all_commands[ele] = all_commands[ele].split("\\")[0]
-            ele += 1
-        print(all_commands)
+
+        for i in range(len(all_commands)):
+            all_commands[i] = all_commands[i].split("\\")[0]
+
+        print(list(all_commands))
 
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
