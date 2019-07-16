@@ -23,8 +23,8 @@ def clear():
 
 
 def options():
-    version="|{}|".format(tool_version)
-    print(" " + purple + bold + "Tool Version: " + rr +version +"\n") 
+    version="{}".format(tool_version)
+    print(" " + purple + bold + "Tool Version: " + rr + version +"\n") 
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
@@ -58,7 +58,6 @@ def main():
 
 
 def startup():
-    # makes terminal size bigger to see YOUR GIANT ASS LOGOS, your welcome you cunt XD
     os.system("resize -s 40 86")
     clear()
     print(line)
