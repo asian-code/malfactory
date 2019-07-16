@@ -14,7 +14,8 @@ blue = core.lblue
 
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
-    print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file", "\t\t  [" + green + "u" + rr + "] Undo last line"))
+    print(
+        "{}\t\t{}".format("  [" + green + "s" + rr + "] Save file", "\t\t  [" + green + "u" + rr + "] Undo last line"))
     print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file",
                           "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
 
@@ -32,6 +33,13 @@ def check_command(com):
         with open("/usr/share/mal-factory/allcmds.txt", "r") as f:
             all_commands = f.readlines()
             f.close()
+            # testing code{
+            with open("/root/tfincmd.txt", "w")as testfile:
+                for i in all_commands:
+                    testfile.write(i)
+                testfile.close()
+            print("Testing code done")
+            # }testing code
             if com in all_commands:
                 return True
     except Exception:
