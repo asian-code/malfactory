@@ -2,6 +2,8 @@
 
 import os
 import sys
+from typing import List
+
 import core
 import main
 
@@ -15,36 +17,39 @@ blue = core.lblue
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
     print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file",
-          "\t\t  [" + green + "r" + rr + "] Remove a line"))
+                            "\t\t  [" + green + "r" + rr + "] Remove a line"))
     print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file",
-          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
+                          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
 
 
 def show_file(file: list):
-    num = 1
-    marker = "-" * 9
-    print(marker + " File " + marker)
-    for element in file:
-        print(str(num) + ")" + element)
-        num += 1
-    print(marker + " File " + marker)
+    if len(file) > 0:
+        num = 1
+        marker = "-" * 9
+        print(marker + " File " + marker)
+        for element in file:
+            print(str(num) + ")" + element)
+            num += 1
+        print(marker + " File " + marker)
 
 
-def check_command(com):
+def read_from_file(location: str):
     try:
-        file = open("/usr/share/mal-factory/allcmds.txt", "r")
-        all_commands = file.readlines()
-        allcmd_filtered = []
-
-        # remove the \n on all elements by removing the last 2 character in each element
-        for i in all_commands:
-            allcmd_filtered.append(i[:len(i) - 1])
-
+        file = open(location, "r")
+        content: List[str] = file.readlines()
+        return content
     except Exception:
-        print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
-        raise
+        print(rr + "\n[" + red + "!" + rr + "] Error: could not find file in {}".format(location) + rr)
     finally:
         file.close()
+
+
+def check_command(com, raw_commands: list):
+    allcmd_filtered = []
+
+    # remove the \n on all elements by removing the last 2 character in each element
+    for i in raw_commands:
+        allcmd_filtered.append(i[:len(i) - 1])
 
     if com in allcmd_filtered:
         return True
@@ -59,6 +64,7 @@ def startup():
     core.maleditorlogo()
     options()
     whole_file = []
+    raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
@@ -79,7 +85,7 @@ def startup():
                 finally:
                     file.close()
                 print(green + "[ OK ] File saved in /root/{}".format(filename) + rr)
-            elif check_command(command):
+            elif check_command(command, raw_cmd):
                 core.clear()
                 options()
                 whole_file.append(command)
