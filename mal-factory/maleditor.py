@@ -30,21 +30,24 @@ def show_file(file: list):
 
 def check_command(com):
     try:
-        with open("/usr/share/mal-factory/allcmds.txt", "r") as f:
-            all_commands = f.readlines()
-            print("wtf in commands txt :"+all_commands)
-            f.close()
-            # testing code{
-            with open("/root/tfincmd.txt", "w")as testfile:
-                for i in all_commands:
-                    testfile.write(i)
-                testfile.close()
-            print("Testing code done")
-            # }testing code
-            if com in all_commands:
-                return True
+        file = open("/usr/share/mal-factory/allcmds.txt", "r"):
+        all_commands = file.readlines()
+        print(list(all_commands))
+        file.close()
+
+        # testing code{
+        with open("/root/tfincmd.txt", "w") as testfile:
+            for i in all_commands:
+                testfile.write(i)
+            testfile.close()
+        print("Testing code done")
+        # }testing code
+
+        if com in all_commands:
+            return True
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
+        raise
     return False
 
 
