@@ -15,27 +15,25 @@ blue = core.lblue
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
     print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file", "\t\t  [" + green + "u" + rr + "] Undo last line"))
-    print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file", "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
+    print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file",
+                          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
 
 
 def show_file(file: list):
+    marker = "-" * 9
+    print(marker)
     for element in file:
         print(element)
+    print(marker)
 
 
 def check_command(com):
     try:
         with open("/usr/share/mal-factory/allcmds.txt", "r") as f:
-            all_commands = f.read()
-
-            '''       
-             for i in all_commands:
-                            print(i, end="")
-            '''
-
+            all_commands = f.readlines()
+            f.close()
             if com in all_commands:
                 return True
-            f.close()
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
     return False
@@ -43,7 +41,7 @@ def check_command(com):
 
 def startup():
     core.clear()
-    print("[" + green + "+" + rr + "]  Starting Mal-editor... ")
+    # print("[" + green + "+" + rr + "]  Starting Mal-editor... ") (we dont need this , to much text on screen )
     print("[" + green + "OK" + rr + "] Mal-editor Successfully Started!")
     core.maleditorlogo()
     options()
