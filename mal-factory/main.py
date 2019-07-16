@@ -15,7 +15,7 @@ rr = core.rr
 bold = core.bold
 ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
-
+tool_version=0.1
 
 def clear():
     for i in range(4):
@@ -23,7 +23,8 @@ def clear():
 
 
 def options():
-    print(" " + purple + bold + "Tool Version: " + rr + "1.1? ERIC CHANGE IT DAMN IT\n") #ERIC CHANGE ME! Change the version to a variable or something
+    version="|{}|".format(tool_version)
+    print(" " + purple + bold + "Tool Version: " + rr +version +"\n") 
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
