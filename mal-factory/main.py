@@ -23,8 +23,8 @@ def clear():
 
 
 def options():
-    version="{}".format(tool_version)
-    print(" " + purple + bold + "Tool Version: " + rr + version +"\n") 
+    
+    print(" " + purple + bold + "Tool Version: " + rr + tool_version +"\n") 
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
     print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
     print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
