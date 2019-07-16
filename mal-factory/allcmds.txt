@@ -1,4 +1,7 @@
-//all commands will have () at the end for arguments exp: wait(5)
+make
 wait
 cmd
 remove
+rename
+move
+type
