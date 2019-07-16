@@ -30,7 +30,7 @@ def show_file(file: list):
 
 def check_command(com):
     try:
-        file = open("/usr/share/mal-factory/allcmds.txt", "r"):
+        file = open("/usr/share/mal-factory/allcmds.txt", "r")
         all_commands = file.readlines()
         print(list(all_commands))
         file.close()
