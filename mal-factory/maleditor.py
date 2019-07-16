@@ -25,7 +25,7 @@ def show_file(file: list):
     marker = "-" * 9
     print(marker + " File " + marker)
     for element in file:
-        print(num + ")" + element)
+        print(str(num) + ")" + element)
         num += 1
     print(marker + " File " + marker)
 
