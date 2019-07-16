@@ -28,7 +28,7 @@ def show_file(file: list):
         marker = "-" * 9
         print(marker + " File " + marker)
         for element in file:
-            print(str(num) + ")" + element)
+            print(str(num) + ")\t" + element)
             num += 1
         print(marker + " File " + marker)
 
@@ -69,7 +69,7 @@ def startup():
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
             if command == "99" or command.lower() == "exit" or command.lower() == "quit" or command.lower() == "e":
-                sys.exit()
+                raise KeyboardInterrupt
             elif command == "u":
                 core.clear()
                 whole_file.pop()
@@ -92,6 +92,7 @@ def startup():
                 show_file(whole_file)
             else:
                 core.clear()
+                options()
                 show_file(whole_file)
                 print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
     except KeyboardInterrupt:
