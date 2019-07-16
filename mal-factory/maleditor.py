@@ -37,9 +37,10 @@ def check_command(com):
         print(list(all_commands))
         # remove the \n on all elements
         for i in all_commands:
-            allcmd_filtered.append(i.split("\\")[0])
+            print(i.split("\\")[0])
+            # allcmd_filtered.append(i.split("\\")[0])
 
-        print(list(allcmd_filtered))
+        # print(list(allcmd_filtered))
 
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find allcmds.txt" + rr)
