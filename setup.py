@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-
 import time
 import subprocess
+import platform
 
 had_error = False
 red = '\033[31m'
