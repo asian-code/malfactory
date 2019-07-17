@@ -11,6 +11,7 @@ rr = '\033[0m'  # reset
 bold = '\033[01m'
 p = platform.system()
 
+
 def get_current_dir():
     save_location = str(subprocess.check_output(["pwd"]))
     # save directory to txt file in the simple-scan folder
@@ -24,24 +25,32 @@ def get_current_dir():
     return result
 
 
-def save_folder_location(location):
+def save_folder_location(location, save_to_app_folder: bool):
+    # save to same directory location.txt for uninstaller and update files
     try:
         file = open(location + "/location.txt", "w")
         file.write(location)
+        # save to app folder so main.py can locate the installation folder after getting separated
+        if save_to_app_folder:
+            file2 = open(location + "/mal-factory/location.txt", "w")
+            file2.write(location)
+
     except:
-        print(red+bold+"[!] Error writing to file"+rr)
+        print(red + bold + "[!] Error writing to file location.txt" + rr)
         had_error = True
         raise
     finally:
         file.close()
+        if save_to_app_folder:
+            file2.close()
 
 
 try:
     # add modules u use here
-    
+
     # subprocess.call("pip3 install scapy", shell=True)
     # subprocess.call("pip3 install curses",shell=True)
-    
+
     if p == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
         print("[+] moved mal-factory folder to /usr/share")
@@ -51,7 +60,7 @@ try:
 
         subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
         print("[+] moved bash file to /usr/bin")
-        
+
     if p == "Darwin":
         subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
         print("[+] moved mal-factory folder to ~/Documents")
@@ -64,6 +73,6 @@ except:
     raise
 finally:
     if had_error:
-        print(red+bold+"[-] Setup Failed, an error stopped the setup process "+rr)
+        print(red + bold + "[-] Setup Failed, an error stopped the setup process " + rr)
     else:
-        print(green+bold+"[+] Setup is complete, no errors!"+rr)
+        print(green + bold + "[+] Setup is complete, no errors!" + rr)
