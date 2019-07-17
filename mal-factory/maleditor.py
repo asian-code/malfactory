@@ -6,6 +6,7 @@ import core
 import main
 import re
 import platform
+
 p = platform.system()
 
 rr = core.rr
@@ -69,18 +70,22 @@ def startup():
         raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
     else:
         raw_cmd = read_from_file("~/Documents/mal-factor/allcmds.txt")
+
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
             if command == "99" or command.lower() == "exit" or command.lower() == "quit" or command.lower() == "e":
                 raise KeyboardInterrupt
-            elif command == "u":
-                core.clear()
-                whole_file.pop()
-                show_file(whole_file)
+
+            elif command.split(" ")[0] == "r":
+                try:
+                    whole_file.pop(int(command.split(" ")[1]))
+                except:
+                    print("[!] Error trying to remove a line")
+
             elif command == "s":
                 try:
-                    filename = input("[*] File name > ")
+                    filename = input(blue + "[*] File name " + rr + "> ")
                     file = open("~/{}".format(filename), "w")
                     for element in whole_file:
                         file.write(element)
@@ -89,16 +94,20 @@ def startup():
                 finally:
                     file.close()
                 print(green + "[ OK ] File saved in ~/{}".format(filename) + rr)
+
             elif check_command(command, raw_cmd):
-                core.clear()
-                options()
                 whole_file.append(command)
-                show_file(whole_file)
+
             else:
                 core.clear()
                 options()
                 show_file(whole_file)
                 print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
+                
+            core.clear()
+            options()
+            show_file(whole_file)
+
     except KeyboardInterrupt:
         main.startup()
     except Exception:
