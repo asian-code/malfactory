@@ -2,6 +2,8 @@
 
 # <p align="center"> <a href="http://tinypic.com?ref=30sf1p3" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/58-512.png" border="0" alt="Image and video hosting by TinyPic" width="29" height="29"></a> &nbsp; Malfactory &nbsp; <a href="http://tinypic.com?ref=30sf1p3" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/58-512.png" border="0" alt="Image and video hosting by TinyPic" width="29" height="29"> </a> </p>
 
+**<p align="center"> Tool version: 0.1 </p>**
+
 <p align="center">  
 <a href="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" target="_blank"><img src="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" border="0" alt="malfactoryboard" width="450" height="350"></a> </p>
 
