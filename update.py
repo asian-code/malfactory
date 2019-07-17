@@ -13,7 +13,7 @@ lblue = '\033[94m'
 
 had_error = False
 app_name = "MalFactory"
-tool_version = 0.1  # [ CHANGE ME ]    -every time there is a important update
+tool_version = 0.1  # [ CHANGE ME ]    -every time there is a important change in the coding of malfactory
 operating_system = platform.system()
 
 
