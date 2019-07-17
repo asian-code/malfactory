@@ -10,6 +10,13 @@ green = '\033[92m'
 rr = '\033[0m'  # reset
 bold = '\033[01m'
 
+def get_tool_version():
+    html = urlopen("https://malfactory.000webhostapp.com/")
+    website = str(html.read())
+    print(website)
+    search_results = re.search(r"(:\d*\.\d)", website)
+print(search_results)
+
 app_name = "MalFactory"
 try:
     if os.path.exists("location.txt") == False:
