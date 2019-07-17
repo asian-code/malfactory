@@ -14,14 +14,6 @@ green = core.lgreen
 blue = core.lblue
 
 
-def get_tool_version():
-    html = urlopen("https://malfactory.000webhostapp.com/")
-    website = str(html.read())
-    print(website)
-    search_results = re.search(r"(:\d*\.\d)", website)
-    print(search_results)
-
-
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
     print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file",
