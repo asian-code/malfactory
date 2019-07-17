@@ -19,7 +19,8 @@ server.ehlo()
 
 # defines everything for the webpage
 url = "https://mail.google.com/mail/u/0/#inbox"
-
+line = core.blue + core.bold + "\n--------------------------------------------------------------------------------------" + core.rr
+gmail = core.blue + core.bold + "G" + core.rr + "m" + core.yellow + "a" + core.rr + "i" + core.yellow + "l" + core.rr
 
 # CLEARS THE SCREEN
 def clear():
@@ -34,7 +35,7 @@ def quit():
 def inbox(username, password):
     try:
         while True:
-            answer = input(core.red + "G" + core.white + "mail" + core.yellow + " > " + core.r + "")
+            answer = input(gmail + core.yellow + " > " + core.r + "")
             answer = answer.split(" ")
             if answer[0] == "help":
                 print("\n-----------\n")
@@ -81,9 +82,9 @@ def inbox(username, password):
 # LOGIN INTO GMAIL
 def login():
     try:
-        gmail_sender = input("Please put your Gmail Username: ")
+        gmail_sender = input("Please put your " + gmail + " Username: ")
         gmail_sender = str(gmail_sender)
-        gmail_passwd = input("Please enter your password: " + core.invis)
+        gmail_passwd = input("Please enter your " + core.red + "password" + core.rr + ": " + core.invis)
         gmail_passwd = str(gmail_passwd)
         print(rr + "")
         if gmail_sender == "" or gmail_passwd == "":
@@ -142,11 +143,13 @@ so sit back, relax, and grab a coffee.""")
 def startup():
     try:
         clear()
+        print(line)
         core.gmaillogo()
+        print(line)
         core.gmailname()
         print("")
-        print("(Username Ex: username@gmail.com)")
-        print("(Password Ex: password1234)")
+        print(core.rr + "[" + core.blue + "+" + core.rr + "] (Username Ex: username@gmail.com)")
+        print(core.rr + "[" + core.blue + "+" + core.rr + "] (Password Ex: password1234)")
         print("")
         login()
     except KeyboardInterrupt:
