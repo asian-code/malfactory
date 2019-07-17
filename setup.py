@@ -25,7 +25,7 @@ def get_current_dir():
     return result
 
 
-def save_folder_location(location, save_to_app_folder: bool):
+def save_folder_location(location, save_to_app_folder=True):
     # save to same directory location.txt for uninstaller and update files
     try:
         file = open(location + "/location.txt", "w")
@@ -51,6 +51,8 @@ try:
     # subprocess.call("pip3 install scapy", shell=True)
     # subprocess.call("pip3 install curses",shell=True)
 
+    save_folder_location(get_current_dir())  # save location before file burst
+
     if p == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
         print("[+] moved mal-factory folder to /usr/share")
@@ -60,12 +62,9 @@ try:
 
         subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
         print("[+] moved bash file to /usr/bin")
-
-    if p == "Darwin":
+    else:
         subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
         print("[+] moved mal-factory folder to ~/Documents")
-
-    save_folder_location(get_current_dir())
 
     time.sleep(1)
 except:
