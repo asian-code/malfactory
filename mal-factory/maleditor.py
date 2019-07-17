@@ -68,7 +68,7 @@ def startup():
     if p == "linux":
         raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
     else:
-        raw_cmd = read_from_file("~/Documents/allcmds.txt")
+        raw_cmd = read_from_file("~/Documents/mal-factor/allcmds.txt")
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
@@ -81,7 +81,7 @@ def startup():
             elif command == "s":
                 try:
                     filename = input("[*] File name > ")
-                    file = open("~/}".format(filename), "w")
+                    file = open("~/{}".format(filename), "w")
                     for element in whole_file:
                         file.write(element)
                 except Exception:
