@@ -60,6 +60,9 @@ Open your terminal and type:
 `chmod +x *`
 and
 `sudo python3 setup.py`
+<br>
+* **IMPORTANT NOTICE: <br>*Please do not move mal-factory folder to a different location on your system after you run setup.py***
+
 <br><br>
 
 #### <p align="center"> Once Finished Setup </p> <br>
