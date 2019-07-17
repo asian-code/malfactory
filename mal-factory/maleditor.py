@@ -5,7 +5,6 @@ import sys
 import core
 import main
 import re
-from urllib.request import urlopen
 
 rr = core.rr
 red = core.lred
