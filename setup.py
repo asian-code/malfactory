@@ -53,9 +53,6 @@ try:
         print("[+] moved bash file to /usr/bin")
         
     if p == "Darwin":
-        subprocess.call("sudo mv mal-factory/allcmds.txt ~/Documents", shell=True)  # folder
-        print("[+] moved allcmds.txt folder to Documents")
-        
         subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
         print("[+] moved mal-factory folder to ~/Documents")
 
