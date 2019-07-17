@@ -85,14 +85,13 @@ def gmailname():
     print(blue + """███████████""")
     print(blue + "██" + white + "███████" + blue + "██" + yellow + "                     ██ ██")
     print(
-        blue + "█" + white + "███" + blue + "   " + white + "███" + blue + "█" + white + """                        ██""")
-    print(blue + "█" + white + "█  " + blue + "      " + blue + "█" + yellow + " ██████████ ████████ ██ ██")
-    print(blue + "█" + white + "██" + blue + "  " + white + "██████" + blue + "" + white + " ██████████ ███  ███ ██ ██")
+        blue + "█" + white + "███" + blue + "███" + white + "███" + blue + "█" + white + """                        ██""")
+    print(blue + "█" + white + "█" + blue + "███████" + blue + "██" + yellow + " ██████████ ████████ ██ ██")
+    print(blue + "█" + white + "█" + blue + "███" + white + "██████" + blue + "" + white + " ██████████ ███  ███ ██ ██")
     print(
-        blue + "█" + white + "███" + blue + "   " + white + "███" + blue + "█" + yellow + " ██  ██  ██ ███  ███ ██ ██")
+        blue + "█" + white + "███" + blue + "███" + white + "███" + blue + "█" + yellow + " ██  ██  ██ ███  ███ ██ ██")
     print(blue + "██" + white + "███████" + blue + "██" + white + " ██  ██  ██ ████████ ██ ██")
     print(blue + "███████████" + rr + "")
-
 
 def gmaillogo():
     print(white + "")
