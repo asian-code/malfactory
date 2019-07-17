@@ -9,6 +9,7 @@ red = '\033[31m'
 green = '\033[92m'
 rr = '\033[0m'  # reset
 bold = '\033[01m'
+p = platform.system()
 
 def get_current_dir():
     save_location = str(subprocess.check_output(["pwd"]))
