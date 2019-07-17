@@ -56,6 +56,13 @@ def main():
         raise
 
 
+def get_tool_version():
+    html = urlopen("https://malfactory.000webhostapp.com/")
+    website = str(html.read())
+    print(website)
+    search_results = re.search(r"(:\d*\.\d)", website)
+    print(search_results)
+
 def startup():
     os.system("resize -s 40 86")
     clear()
