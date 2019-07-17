@@ -86,7 +86,7 @@ def main():
     try:
         if operating_system == "Linux":
             # installs new version
-            subprocess.call("./gitAddress", shell=True)
+            subprocess.call("./gitAddress", shell=True, cwd=original_location)
             print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
 
             uninstall_current_version(original_location)
@@ -97,10 +97,10 @@ def main():
 
             setup_program(original_location)
         else:
-            print("Run stuff for Mac users")
+            # Run stuff for Mac users
 
-            # installs new version
-            subprocess.call("./gitAddressMac", shell=True)
+            # installs new version into ~/Downloads
+            subprocess.call("./gitAddressMac", shell=True, cwd=original_location)
             print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
 
             uninstall_current_version(original_location)
