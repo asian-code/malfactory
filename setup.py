@@ -41,15 +41,20 @@ try:
     
     # subprocess.call("pip3 install scapy", shell=True)
     # subprocess.call("pip3 install curses",shell=True)
+    
+    if p == "Linux":
+        subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
+        print("[+] moved mal-factory folder to /usr/share")
 
-    subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
-    print("[+] moved mal-factory folder to /usr/share")
+        subprocess.call("sudo mv malfactory.desktop /usr/share/applications/", shell=True)  # .desktop file
+        print("[+] moved desktop to /usr/share/applications")
 
-    subprocess.call("sudo mv malfactory.desktop /usr/share/applications/", shell=True)  # .desktop file
-    print("[+] moved desktop to /usr/share/applications")
-
-    subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
-    print("[+] moved bash file to /usr/bin")
+        subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
+        print("[+] moved bash file to /usr/bin")
+        
+    if p == "Darwin":
+        subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
+        print("[+] moved mal-factory folder to ~/Documents")
 
     save_folder_location(get_current_dir())
 
