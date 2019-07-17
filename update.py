@@ -2,6 +2,7 @@
 import subprocess
 import os, time
 import sys
+from urllib.request import urlopen
 
 had_error = False
 original_location = ""
@@ -13,9 +14,8 @@ bold = '\033[01m'
 def get_tool_version():
     html = urlopen("https://malfactory.000webhostapp.com/")
     website = str(html.read())
-    print(website)
-    search_results = re.search(r"(:\d*\.\d)", website)
-print(search_results)
+    return website
+
 
 app_name = "MalFactory"
 try:
