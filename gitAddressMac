@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~/Downloads
+sudo git clone https://github.com/asian-code/malfactory.git
+cd ~/Downloads/malfactory
+chmod +x *
