@@ -5,6 +5,8 @@ import sys
 import core
 import main
 import re
+import platform
+p = platform.system()
 
 rr = core.rr
 red = core.lred
@@ -63,7 +65,10 @@ def startup():
     core.maleditorlogo()
     options()
     whole_file = []
-    raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
+    if p == "linux":
+        raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
+    else:
+        raw_cmd = read_from_file("~/Documents/allcmds.txt")
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
@@ -76,14 +81,14 @@ def startup():
             elif command == "s":
                 try:
                     filename = input("[*] File name > ")
-                    file = open("/root/{}".format(filename), "w")
+                    file = open("~/}".format(filename), "w")
                     for element in whole_file:
                         file.write(element)
                 except Exception:
                     print(red + "[!] Error saving file as " + filename + rr)
                 finally:
                     file.close()
-                print(green + "[ OK ] File saved in /root/{}".format(filename) + rr)
+                print(green + "[ OK ] File saved in ~/{}".format(filename) + rr)
             elif check_command(command, raw_cmd):
                 core.clear()
                 options()
