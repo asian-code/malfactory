@@ -16,6 +16,7 @@ green = core.lgreen
 blue = core.lblue
 
 
+# maleditor is only for Editing/Saving Malscript files. Another program will convert the malscript to code for target platform
 def options():
     print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
     print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file",
@@ -37,13 +38,12 @@ def show_file(file: list):
 
 def read_from_file(location: str):
     try:
-        file = open(location, "r")
-        content = file.readlines()
+        fileloc = open(location, "r")
+        content = fileloc.readlines()
+        fileloc.close()
         return content
     except Exception:
         print(rr + "\n[" + red + "!" + rr + "] Error: could not find file in {}".format(location) + rr)
-    finally:
-        file.close()
 
 
 def check_command(com, raw_commands: list):
@@ -57,6 +57,12 @@ def check_command(com, raw_commands: list):
         return True
 
     return False
+
+
+def set_screen(file_to_show):
+    core.clear()
+    options()
+    show_file(file_to_show)
 
 
 def startup():
@@ -82,28 +88,28 @@ def startup():
                     whole_file.pop(int(command.split(" ")[1]))
                 except:
                     print("[!] Error trying to remove a line")
+                set_screen(whole_file)
+
 
             elif command == "s":
                 try:
                     filename = input(blue + "[*] File name " + rr + "> ")
-                    file = open("~/{}".format(filename), "w")
+                    savefile = open("~/{}.txt".format(filename), "w")
                     for element in whole_file:
-                        file.write(element)
+                        savefile.write(element + "\n")
+                    savefile.close()
                 except Exception:
                     print(red + "[!] Error saving file as " + filename + rr)
-                finally:
-                    file.close()
+
                 print(green + "[ OK ] File saved in ~/{}".format(filename) + rr)
 
             elif check_command(command, raw_cmd):
                 whole_file.append(command)
-
+                set_screen(whole_file)
             else:
-                core.clear()
-                options()
-                show_file(whole_file)
+                set_screen(whole_file)
                 print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
-                
+
             core.clear()
             options()
             show_file(whole_file)
