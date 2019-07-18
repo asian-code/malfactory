@@ -80,9 +80,12 @@ def main():
     # save locations
     install_location, original_location = get_locations()
 
+    # print(
+    #     green + bold + "[+] Detected OS:\t" + operating_system + "\n[+] Original file location:\t" + original_location +
+    #     "\n[+] Location to install:\t" + install_location + rr)
     print(
-        green + bold + "[+] Detected OS:\t" + operating_system + "\n[+] Original file location:\t" + original_location +
-        "\n[+] Location to install:\t" + install_location + rr)
+        green + bold + "[+] Detected OS:\t{:30}\n[+] Original file location:\t{:30}\n[+] Location to install:\t{:30}".
+        format(operating_system, original_location, install_location) + rr)
 
     try:
         if operating_system == "Linux":
