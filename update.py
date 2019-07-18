@@ -11,7 +11,6 @@ rr = '\033[0m'  # reset
 bold = '\033[01m'
 lblue = '\033[94m'
 
-had_error = False
 app_name = "MalFactory"
 tool_version = 0.1  # [ CHANGE ME ]    -every time there is a important change in the coding of malfactory
 operating_system = platform.system()
@@ -55,6 +54,8 @@ def get_locations():
 
 
 def main():
+    had_error = False
+
     # check if an update is needed
     if tool_version >= get_latest_version():
         update_anyway = input(
@@ -80,8 +81,8 @@ def main():
     install_location, original_location = get_locations()
 
     print(
-        green + bold + "[+] Detected OS: " + operating_system + "\n[+] Original file location: " + original_location +
-        "\n[+] Location to install: " + install_location + rr)
+        green + bold + "[+] Detected OS:\t" + operating_system + "\n[+] Original file location:\t" + original_location +
+        "\n[+] Location to install:\t" + install_location + rr)
 
     try:
         if operating_system == "Linux":
