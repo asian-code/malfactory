@@ -26,13 +26,17 @@ def clear():
 def options():
     print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
-    print(rr + "   [" + purple + "1" + rr + "]\t Malware Terminal IDE")
-    print("   [" + purple + "2" + rr + "]\t Basic Malware Templates")
-    print("   [" + purple + "3" + rr + "]\t Send Malware With Email w/ Gmail")
+    print(rr + "   [" + purple + "1" + rr + "]\t MalEditor")
+    print("   [" + purple + "2" + rr + "]\t Send Malware With Email w/ Gmail")
     print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
 
-    print("   [" + red + "u" + rr + "]\t Uninstall Malfactory")
+    print("\n   [" + purple + "update" + rr + "]\t Check for Updates")
+    print("\n   [" + red + "u" + rr + "]\t " + red + "Uninstall" + rr + " Malfactory(Comming soon)")
     print("\n   [" + purple + "99" + rr + "]\t Exit \n")
+
+
+def help(command: str):
+    print("Help menu")
 
 
 def main():
@@ -41,7 +45,7 @@ def main():
             command = input(red + "Mal" + purple + "Factory" + rr + " > ")
             if command == "1":
                 maleditor.startup()
-            if command == "3":
+            if command == "2":
                 gmailemail.startup()
             elif command == "r":
                 clear()
@@ -60,10 +64,12 @@ def main():
 
 def startup():
     os.system("resize -s 40 86")
-    # clear()
+    clear()
     print(line)
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
     options()
+    print("[+] Checking for updates...")
+    # update.main(false)# checks for updates
     main()
