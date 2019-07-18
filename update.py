@@ -51,7 +51,7 @@ def get_locations():
         install_loc += "/{}".format(i)
 
     original_location = str(install_loc + "/" + original_loc)
-    return install_loc, original_loc
+    return install_loc, original_location
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
     install_location, original_location = get_locations()
 
     print(
-        green + bold + "[+] Detected OS:" + operating_system + "\n[+] Original file location:" + original_location +
+        green + bold + "[+] Detected OS: " + operating_system + "\n[+] Original file location: " + original_location +
         "\n[+] Location to install: " + install_location + rr)
 
     try:
