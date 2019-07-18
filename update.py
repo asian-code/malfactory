@@ -83,9 +83,11 @@ def main():
     # print(
     #     green + bold + "[+] Detected OS:\t" + operating_system + "\n[+] Original file location:\t" + original_location +
     #     "\n[+] Location to install:\t" + install_location + rr)
+
     print(
-        green + bold + "[+] Detected OS:\t{:30}\n[+] Original file location:\t{:30}\n[+] Location to install:\t{:30}".
-        format(operating_system, original_location, install_location) + rr)
+        green + bold + "{:30s}\t{}\n{:30s}\t{}\n{:30s}\t{}".
+        format("[+] Detected OS:", operating_system, "[+] Original file location:", original_location,
+               "[+] Location to install:", install_location) + rr)
 
     try:
         if operating_system == "Linux":
