@@ -1,10 +1,7 @@
 #!/usr/bin/python
 
-import os
-import sys
 import core
 import main
-import re
 import platform
 
 p = platform.system()
@@ -25,15 +22,15 @@ def options():
                           "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
 
 
-def show_file(file: list):
+def show_file(file: list,filename="File"):
     if len(file) > 0:
         num = 1
         marker = "-" * 9
-        print(marker + " File " + marker)
+        print(marker + " {} ".format(filename) + marker)
         for element in file:
             print(str(num) + ")\t" + element)
             num += 1
-        print(marker + " File " + marker)
+        print(marker + " {} ".format(filename) + marker)
 
 
 def read_from_file(location: str):
@@ -72,6 +69,7 @@ def startup():
     core.maleditorlogo()
     options()
     whole_file = []
+
     if p == "linux":
         raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
     else:
