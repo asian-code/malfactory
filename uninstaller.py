@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os
+import platform
 
 red = '\033[31m'
 green = '\033[92m'
@@ -8,15 +9,20 @@ rr = '\033[0m'  # reset
 bold = '\033[01m'
 had_error = False
 app_name = "Malfactory"
+operating_system = platform.system()
+
 try:
-    os.system("sudo rm -rf /usr/share/mal-factory")  # folder
-    print("[+] removed " + app_name + " folder in /usr/share/mal-factory")
+    if operating_system == "Linux":
+        os.system("sudo rm -rf /usr/share/mal-factory")  # folder
+        print("[+] removed " + app_name + " folder in /usr/share/mal-factory")
 
-    os.system("sudo rm -rf /usr/share/applications/malfactory.desktop")  # desktop file
-    print("[+] removed desktop file in /usr/share/applications/malfactory.desktop")
+        os.system("sudo rm -rf /usr/share/applications/malfactory.desktop")  # desktop file
+        print("[+] removed desktop file in /usr/share/applications/malfactory.desktop")
 
-    os.system("sudo rm -rf /usr/bin/malfactory")  # bash file
-    print("[+] removed bash file /usr/bin/malfactory")
+        os.system("sudo rm -rf /usr/bin/malfactory")  # bash file
+        print("[+] removed bash file /usr/bin/malfactory")
+    else:
+        os.system("sudo rm -rf ~/Documents")
 
     # removes the folder where the installation folder is located
     try:
@@ -32,6 +38,6 @@ except:
     raise
 finally:
     if had_error:
-        print(red + bold + "[!] Unable to uninstall "+app_name+" due to an error" + rr)
+        print(red + bold + "[!] Unable to uninstall " + app_name + " due to an error" + rr)
     else:
         print(green + bold + "[ OK ] Uninstall is complete, no errors !" + rr)
