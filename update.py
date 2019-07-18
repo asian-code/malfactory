@@ -53,18 +53,25 @@ def get_locations():
     return install_loc, original_location
 
 
-def main():
+def main(force=True):  # force update doesnt require user permission to update
     had_error = False
 
-    # check if an update is needed
-    if tool_version >= get_latest_version():
-        update_anyway = input(
-            lblue + "You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(
-                app_name, rr))
-        update_anyway = update_anyway.lower()
-        if update_anyway == "n" or update_anyway == "no":
-            print("[+] Exiting updater")
-            sys.exit()
+    if not force:
+        # check if an update is needed
+        if tool_version >= get_latest_version():
+            update_anyway = input(
+                lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(
+                    app_name, rr))
+            update_anyway = update_anyway.lower()
+            if update_anyway == "n" or update_anyway == "no":
+                print("[+] Exiting updater")
+                sys.exit()
+        else:
+            permission = input(lblue + "[!] Update is available, Would you like to install now? (y/n): " + rr)
+            permission = permission.lower()
+            if permission == "n" or permission == "no":
+                print("[+] Exiting updater")
+                sys.exit()
 
     # check if app was properly installed into system
     try:
@@ -79,10 +86,6 @@ def main():
 
     # save locations
     install_location, original_location = get_locations()
-
-    # print(
-    #     green + bold + "[+] Detected OS:\t" + operating_system + "\n[+] Original file location:\t" + original_location +
-    #     "\n[+] Location to install:\t" + install_location + rr)
 
     print(
         green + bold + "{:30s}\t{}\n{:30s}\t{}\n{:30s}\t{}".
