@@ -2,4 +2,5 @@
 cd /usr/var
 sudo git clone https://github.com/asian-code/malfactory.git
 cd /usr/var/malfactory
-chmod +x *
+chmod 755 -R *
+
