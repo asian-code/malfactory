@@ -4,6 +4,7 @@ import core
 import maleditor
 import gmailemail
 import os
+import sys
 
 green = core.lgreen
 yellow = core.yellow
@@ -15,7 +16,14 @@ rr = core.rr
 bold = core.bold
 ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
-tool_version = 0.1 # get tool version from update.py not in main.py
+tool_version = 0.1  # get tool version from update.py not in main.py
+
+
+def get_install_location():
+    location_file = open("location.txt", "r")
+    location = location_file.read()
+    location_file.close()
+    return location
 
 
 def clear():
@@ -73,11 +81,16 @@ def main():
 def startup():
     os.system("resize -s 40 86")
     clear()
+    # allows for python to find installation folder
+    loc = get_install_location()
+    print(loc)
+    # sys.path.append(loc)
+
     print(line)
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    print("[+] Checking for updates...")
+    print(" [+] Checking for updates...")
     options()
 
     # update.main(false)# checks for updates
