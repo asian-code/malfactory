@@ -74,6 +74,7 @@ def main():
 
 
 def startup():
+    core.laughingskull()
     os.system("resize -s 40 86")
     clear()
     print(line)
