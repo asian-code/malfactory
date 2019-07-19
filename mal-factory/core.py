@@ -3,8 +3,7 @@ import random
 import sys
 import os
 import time
-import platform
-from playsound import playsound
+import pygame
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -185,8 +184,9 @@ def laughingskull():
                                          █████████████████████
  """ + rr
     x = 0
-    if platform.system() == "Darwin":
-        playsound('laughingskull.mp3', 0)
+    pygame.mixer.init()
+    pygame.mixer.music.load("laughingskull.mp3")
+    pygame.mixer.music.play()
     while x <= 5:
         print(skull1)
         time.sleep(0.1)
