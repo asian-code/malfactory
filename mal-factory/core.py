@@ -206,7 +206,7 @@ def laughingskull():
         time.sleep(0.2)
         print(skull2)
         clear()
-        x += 1
+        x = x + 1
 
 def gmailname():
     print("")
