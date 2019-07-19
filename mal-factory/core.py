@@ -2,6 +2,7 @@
 import random
 import sys
 import os
+import time
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
