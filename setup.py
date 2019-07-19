@@ -46,8 +46,8 @@ def save_folder_location(location, save_to_app_folder=True):
 try:
     # add modules u use here
 
-    # subprocess.call("pip3 install scapy", shell=True)
     # subprocess.call("pip3 install curses",shell=True)
+    # subprocess.call("pip3 install playsound, shell=True")
 
     save_folder_location(get_current_dir())  # save location before file burst
 
