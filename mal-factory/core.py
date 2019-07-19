@@ -76,7 +76,7 @@ def quit():
 
 def clear():
     x = 0
-    while x <= 5:
+    while x <= 3:
         os.system("clear")
         x += 1
 
