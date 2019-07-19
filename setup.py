@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import time
 import subprocess
 import platform
 
@@ -28,7 +27,7 @@ def get_current_dir():
 def save_folder_location(location, save_to_app_folder=True):
     # save to same directory location.txt for uninstaller and update files
     try:
-        file1 = open(location + "/location.txt", "w")
+        file1 = open(location + "location.txt", "w")
         file1.write(location)
         file1.close()
         # save to app folder so main.py can locate the installation folder after getting separated
@@ -41,7 +40,7 @@ def save_folder_location(location, save_to_app_folder=True):
         print(red + bold + "[!] Error writing to file location.txt" + rr)
         had_error = True
         raise
-  
+
 
 try:
     # add modules u use here
@@ -50,6 +49,7 @@ try:
     # subprocess.call("pip3 install playsound, shell=True")
 
     save_folder_location(get_current_dir())  # save location before file burst
+    subprocess.call("chmod 755 -R *", shell=True)
 
     if p == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
@@ -64,7 +64,7 @@ try:
         subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
         print("[+] moved mal-factory folder to ~/Documents")
 
-   
+
 except:
     had_error = True
     raise
