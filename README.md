@@ -42,6 +42,7 @@ Python Library (Pip3):
 * [os](https://docs.python.org/3/library/os.html)
 * [time](https://docs.python.org/3/library/time.html)
 * [platform](https://docs.python.org/3/library/platform.html)
+* [playsound](https://pypi.org/project/playsound/)
 
 ------------------------------------------------------------------------
 
