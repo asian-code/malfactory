@@ -15,7 +15,7 @@ rr = core.rr
 bold = core.bold
 ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
-tool_version = 0.1
+tool_version = 0.1 # get tool version from update.py not in main.py
 
 
 def clear():
@@ -27,33 +27,28 @@ def options():
     print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
     print(" " + ul + "Please Select From The Menu" + rr + "\n")
 
-    # print(rr + "   [" + purple + "1" + rr + "]\t MalEditor")
-    # print("   [" + purple + "2" + rr + "]\t Send Malware With Email w/ Gmail")
-    # print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
-    #
-    # print("\n   [" + purple + "c" + rr + "]\t Check for Updates(Coming soon)")
-    # print("   [" + red + "u" + rr + "]\t Uninstall Malfactory(Comming soon)")
-    # print("   [" + purple + "99" + rr + "]\t Exit \n")
-
-    print(rr + "   [" + purple + "1" + rr + "]\t MalEditor")
-    print("   [" + purple + "2" + rr + "]\t Send Malware With Email w/ Gmail")
-    print("   [" + purple + "r" + rr + "]\t Reloads The Screen")
-
-    print("\n   [" + purple + "c" + rr + "]\t Check for Updates(Coming soon)")
-    print("   [" + red + "u" + rr + "]\t Uninstall Malfactory(Comming soon)")
-    print("   [" + purple + "99" + rr + "]\t Exit \n")
+    print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
+    print("\t{:10s} Send Malware With Email w/ Gmail".format("[" + purple + "2" + rr + "]"))
+    print("\t{:10s} Reloads The Screen".format("[" + purple + "r" + rr + "]"))
+    print()  # prints empty line to separate options from functions
+    print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
+    print("\t{:10s} Uninstall Malfactory(Comming soon)".format("[" + red + "u" + rr + "]"))
+    print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
+    print()  # empty line for the looks
 
 
-def help(command: str):
+def help():
     print("Help menu")
     print("[1] MalEditor -is used for making malware using \"Malscript\", you can write and save your scripts here")
     print("[2] Reloads The Screen -is used for refreshing the screen")
+    # etc , add more stuff here
 
 
 def main():
     try:
         while True:
             command = input(red + "Mal" + purple + "Factory" + rr + " > ")
+            command = command.lower()
             if command == "1":
                 maleditor.startup()
             if command == "2":
@@ -61,8 +56,10 @@ def main():
             elif command == "r":
                 clear()
                 startup()
-            elif command == "99" or command.lower() == "exit" or command.lower() == "quit":
+            elif command == "99" or command == "exit" or command == "quit":
                 core.quit()
+            elif command == "help":
+                help()
             else:
                 print(rr + "\nSorry, " + command + " is not a command.\n")
     except KeyboardInterrupt:
@@ -74,14 +71,14 @@ def main():
 
 
 def startup():
-    core.laughingskull()
     os.system("resize -s 40 86")
     clear()
     print(line)
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    options()
     print("[+] Checking for updates...")
+    options()
+
     # update.main(false)# checks for updates
     main()
