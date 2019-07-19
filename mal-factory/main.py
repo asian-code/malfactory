@@ -5,7 +5,9 @@ import maleditor
 import gmailemail
 import os
 import sys
+import platform
 
+operating_system = platform.system()
 green = core.lgreen
 yellow = core.yellow
 purple = core.lpurple
@@ -20,10 +22,15 @@ tool_version = 0.1  # get tool version from update.py not in main.py
 
 
 def get_install_location():
-    location_file = open("location.txt", "r")
-    location = location_file.read()
-    location_file.close()
-    return location
+    try:
+        if operating_system == "Linux":
+            location_file = open("location.txt", "r")
+            location = location_file.read()
+            location_file.close()
+        return location
+    except:
+        print("[!] Error, location.txt is not located")
+        raise
 
 
 def clear():
