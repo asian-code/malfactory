@@ -3,6 +3,7 @@ import random
 import sys
 import os
 import time
+import playsound
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -183,6 +184,7 @@ def laughingskull():
                                          █████████████████████
  """ + rr
     x = 0
+    playsound('laughingskull.mp3')
     while x <= 3:
         print(skull1)
         time.sleep(0.1)
