@@ -3,6 +3,7 @@ import random
 import sys
 import os
 import time
+import platform
 from playsound import playsound
 
 rr = '\033[0m'  # reset
@@ -184,7 +185,8 @@ def laughingskull():
                                          █████████████████████
  """ + rr
     x = 0
-    playsound('laughingskull.mp3', 0)
+    if platform.system() == "Darwin":
+        playsound('laughingskull.mp3', 0)
     while x <= 5:
         print(skull1)
         time.sleep(0.1)
