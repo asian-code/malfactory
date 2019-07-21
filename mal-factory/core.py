@@ -3,7 +3,7 @@ import random
 import sys
 import os
 import time
-import pygame
+#import pygame
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -183,6 +183,7 @@ def laughingskull():
                                         ████████████████████████
                                          █████████████████████
  """ + rr
+    """
     x = 0
     pygame.mixer.init()
     pygame.mixer.music.load("laughingskull.mp3")
@@ -195,6 +196,7 @@ def laughingskull():
         time.sleep(0.1)
         clear()
         x = x + 1
+        """
 
 def gmailname():
     print("")
