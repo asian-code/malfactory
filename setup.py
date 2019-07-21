@@ -30,13 +30,14 @@ def save_folder_location(location, save_to_app_folder=True):
         file1 = open(location + "location.txt", "w")
         file1.write(location)
         file1.close()
-        print("[+] location.txt 1 is finished")
+
         # save to app folder so main.py can locate the installation folder after getting separated
         if save_to_app_folder:
             file2 = open(location + "/mal-factory/location.txt", "w")
             file2.write(location)
             file2.close()
-            print("[+] location.txt 2 is finished")
+
+        print(green + "[+] location.txt created" + rr)
 
     except:
         print(red + bold + "[!] Error writing to file location.txt" + rr)
@@ -52,9 +53,9 @@ try:
 
     # save location before file burst
     current_dir = get_current_dir()
-    print("[+] Detected location: \t" + current_dir)
+    print(green + "[+] Detected location: \t" + current_dir + rr)
     save_folder_location(current_dir)
-    # subprocess.call("chmod 755 -R *", shell=True)
+    subprocess.call("chmod 755 -R *", shell=True)
 
     if p == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
