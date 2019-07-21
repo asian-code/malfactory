@@ -47,9 +47,9 @@ try:
 
     # subprocess.call("pip3 install curses",shell=True)
     # subprocess.call("pip3 install playsound, shell=True")
-    subprocess.call("pip3 install urllib, shell=True")
-
-    save_folder_location(get_current_dir())  # save location before file burst
+    
+    # save location before file burst
+    save_folder_location(get_current_dir())  
     subprocess.call("chmod 755 -R *", shell=True)
 
     if p == "Linux":
