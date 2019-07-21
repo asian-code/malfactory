@@ -30,11 +30,13 @@ def save_folder_location(location, save_to_app_folder=True):
         file1 = open(location + "location.txt", "w")
         file1.write(location)
         file1.close()
+        print("[+] location.txt 1 is finished")
         # save to app folder so main.py can locate the installation folder after getting separated
         if save_to_app_folder:
             file2 = open(location + "/mal-factory/location.txt", "w")
             file2.write(location)
             file2.close()
+            print("[+] location.txt 2 is finished")
 
     except:
         print(red + bold + "[!] Error writing to file location.txt" + rr)
@@ -47,10 +49,12 @@ try:
 
     # subprocess.call("pip3 install curses",shell=True)
     # subprocess.call("pip3 install playsound, shell=True")
-    
+
     # save location before file burst
-    save_folder_location(get_current_dir())  
-    subprocess.call("chmod 755 -R *", shell=True)
+    current_dir = get_current_dir()
+    print(current_dir)
+    # save_folder_location()
+    # subprocess.call("chmod 755 -R *", shell=True)
 
     if p == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
