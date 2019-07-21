@@ -26,18 +26,21 @@ def get_current_dir():
 
 def save_folder_location(location, save_to_app_folder=True):
     # save to same directory location.txt for uninstaller and update files
+    c = 0
     try:
-        file1 = open(location + "location.txt", "w")
+        file1 = open(location + "/location.txt", "w")
         file1.write(location)
         file1.close()
+        c += 1
 
         # save to app folder so main.py can locate the installation folder after getting separated
         if save_to_app_folder:
             file2 = open(location + "/mal-factory/location.txt", "w")
             file2.write(location)
             file2.close()
+            c += 1
 
-        print(green + "[+] location.txt created" + rr)
+        print(green + "[+] location.txt created: " + c + rr)
 
     except:
         print(red + bold + "[!] Error writing to file location.txt" + rr)
