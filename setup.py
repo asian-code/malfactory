@@ -40,7 +40,7 @@ def save_folder_location(location, save_to_app_folder=True):
             file2.close()
             c += 1
 
-        print(green + "[+] location.txt created: " + c + rr)
+        print(green + "[+] location.txt created: " + str(c) + rr)
 
     except:
         print(red + bold + "[!] Error writing to file location.txt" + rr)
