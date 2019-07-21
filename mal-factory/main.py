@@ -87,7 +87,6 @@ def main():
 
 def startup():
     os.system("resize -s 40 86")
-    core.laughingskull()
     clear()
     # allows for python to find installation folder
     loc = get_install_location()
