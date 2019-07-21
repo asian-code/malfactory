@@ -52,8 +52,8 @@ try:
 
     # save location before file burst
     current_dir = get_current_dir()
-    print(current_dir)
-    # save_folder_location()
+    print("[+] Detected location: \t" + current_dir)
+    save_folder_location(current_dir)
     # subprocess.call("chmod 755 -R *", shell=True)
 
     if p == "Linux":
