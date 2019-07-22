@@ -66,14 +66,18 @@ and
 
 <br><br>
 
-#### <p align="center"> Once Finished Setup </p> <br>
+#### <p align="center"> Once Finished Setup (For Linux) </p> <br>
 
 Type and enter `malfactory` to run the tool **or** Open the application in your application menu.
 <br><br>
 
+#### <p align="center"> Once Finished Setup (For Mac) </p> <br>
+
+Go to `~/Documents/malfactory` and type `sudo python3 malfactory.py`.
+
 #### <p align="center"> Troubleshooting </p>
 
-If typing `googleot` does not work, then either you did not run the `setup.py` file or your linux distro doesn't support the file setup it uses.
+If typing `malfactory` does not work, then either you did not run the `setup.py` file or your linux distro doesn't support the file setup it uses.
 
 Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/share/applications/`, and `malfactory` goes to `/usr/bin`.
 
