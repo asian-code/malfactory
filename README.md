@@ -58,7 +58,7 @@ Python Library (Pip3):
 ## <p align="center"> <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> &nbsp; How to Run &nbsp; <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> </p>
 
 Open your terminal and type:
-`chmod +x *`
+`chmod 755 -R *`
 and
 `sudo python3 setup.py`
 <br>
@@ -77,9 +77,9 @@ Go to `~/Documents/malfactory` and type `sudo python3 malfactory.py`.
 
 #### <p align="center"> Troubleshooting </p>
 
-If typing `malfactory` does not work, then either you did not run the `setup.py` file or your linux distro doesn't support the file setup it uses.
+If typing `malfactory` in your terminal does not work, then either you did not run the `setup.py` file or your linux distro doesn't support the file setup it uses.
 
-Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/share/applications/`, and `malfactory` goes to `/usr/bin`.
+Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/share/applications/`, and `malfactory` goes to `/usr/bin`. `setup.py` does all this for you but in case it doesnt, please report the issue with a screenshot of any error messages. :grin:
 
 ------------------------------------------------------------------------
 
