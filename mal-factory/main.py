@@ -101,8 +101,7 @@ def startup():
     sys.path.append(loc)
     try:
         import update
-
-        # update.main(false)# checks for updates
+        update.main(force=False)
     except ImportError:
         print(red + "[!] Error importing update" + rr)
 
