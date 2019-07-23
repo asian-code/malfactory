@@ -24,11 +24,11 @@ tool_version = 0.1  # get tool version from update.py not in main.py
 def get_install_location():
     # allows for python to find installation folder
     loc = ""
-    if os.path.exists("location.txt"):
+    try:
         file = open("location.txt", "r")
         loc = file.read()
         file.close()
-    else:
+    except FileNotFoundError:
         print(red + "[!] Error, location.txt is not located" + rr)
     return loc
 
@@ -92,15 +92,17 @@ def startup():
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    print(" [+] Checking for updates...")
+    print(blue + " [+] Checking for updates..." + rr)
 
     # testing code{
 
     loc = get_install_location()
-    print("[+] Checking for updater: " + loc)
+    print(blue + " [+] Checking for updater: " + rr + loc)
     sys.path.append(loc)
     try:
         import update
+
+        # update.main(false)# checks for updates
     except ImportError:
         print(red + "[!] Error importing update" + rr)
 
@@ -108,5 +110,4 @@ def startup():
 
     options()
 
-    # update.main(false)# checks for updates
     main()
