@@ -4,6 +4,7 @@ import sys
 import os
 import time
 import pygame
+import platform
 
 rr = '\033[0m'  # reset
 bold = '\033[01m'
@@ -186,7 +187,10 @@ def laughingskull():
     
     x = 0
     pygame.mixer.init()
-    pygame.mixer.music.load("laughingskull.mp3")
+    if platform.system() == "Linux":
+        pygame.mixer.music.load("~/usr/share/mal-factory/laughingskull.mp3")
+    else:
+        pygame.mixer.music.load("laughingskull.mp3")
     pygame.mixer.music.play()
     while x <= 5:
         print(skull1)
