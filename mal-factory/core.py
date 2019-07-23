@@ -3,7 +3,7 @@ import random
 import sys
 import os
 import time
-import pygame
+from pygame import mixer
 import platform
 
 rr = '\033[0m'  # reset
