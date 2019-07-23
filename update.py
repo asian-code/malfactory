@@ -53,7 +53,7 @@ def get_locations():
     return install_loc, original_location
 
 
-def main(force=True):  # force update doesnt require user permission to update
+def main(force=False):  # force update doesnt require user permission to update
     had_error = False
 
     if not force:
