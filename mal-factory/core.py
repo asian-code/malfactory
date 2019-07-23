@@ -186,7 +186,7 @@ def laughingskull():
  """ + rr
     
     x = 0
-    pygame.mixer.init()
+    mixer.init()
     if platform.system() == "Linux":
         mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
         mixer.music.play()
