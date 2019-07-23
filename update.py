@@ -132,4 +132,4 @@ def main(force=True):  # force update doesnt require user permission to update
             print(green + bold + "[ OK ] Update complete!!\n" + rr)
 
 
-main()
+
