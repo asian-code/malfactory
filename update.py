@@ -71,11 +71,11 @@ def main(force=False):  # force update doesnt require user permission to update
                 # } testing code
 
             else:
-                permission = input(lblue + "[!] Update is available, Would you like to install now? (y/n): " + rr)
+                permission = input(lblue + "[*] Update is available, Would you like to install now? (y/n): " + rr)
                 permission = permission.lower()
                 if permission == "n" or permission == "no":
                     print("[+] Exiting updater")
-                    sys.exit()
+                    run_program = False
 
         except Exception:
             print("[-] Unable to connect to connect to server, check internet connection")
@@ -90,7 +90,7 @@ def main(force=False):  # force update doesnt require user permission to update
         except:
             print(
                 red + bold + "[!] Error -" + app_name + " was never properly installed to update,\n\tMissing location.txt" + rr)
-            sys.exit()
+            raise KeyboardInterrupt
 
         # save locations
         install_location, original_location = get_locations()
