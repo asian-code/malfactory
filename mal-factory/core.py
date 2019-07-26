@@ -191,7 +191,7 @@ def laughingskull():
                                         ████████████████████████
                                          █████████████████████
  """ + rr
-
+    os.system("resize -s 50 70")
     x = 0
     mixer.init()
     if platform.system() == "Linux":
