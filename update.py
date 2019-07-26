@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import subprocess
-import os, time
+import os
 import sys
 from urllib.request import urlopen
 import platform
@@ -55,81 +55,86 @@ def get_locations():
 
 def main(force=False):  # force update doesnt require user permission to update
     had_error = False
-
+    run_program = True  # if wants to run updater
     if not force:
         # check if an update is needed
-        if tool_version >= get_latest_version():
-            update_anyway = input(
-                lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(
-                    app_name, rr))
-            update_anyway = update_anyway.lower()
-            if update_anyway == "n" or update_anyway == "no":
-                print("[+] Exiting updater")
-                sys.exit()
-        else:
-            permission = input(lblue + "[!] Update is available, Would you like to install now? (y/n): " + rr)
-            permission = permission.lower()
-            if permission == "n" or permission == "no":
-                print("[+] Exiting updater")
-                sys.exit()
+        try:
+            if tool_version >= get_latest_version():
+                print(lblue + "[+] You seem to have the latest version of {}".format(app_name))
 
-    # check if app was properly installed into system
-    try:
-        if not os.path.exists("location.txt"):
-            raise Exception("Missing location.txt file")
-        else:
-            print("location.txt is detected")
-    except:
+                # testing code {
+                # update_anyway = input(lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(app_name, rr))
+                update_anyway = "n"
+                update_anyway = update_anyway.lower()
+                if update_anyway == "n" or update_anyway == "no":
+                    run_program = False
+                # } testing code
+
+            else:
+                permission = input(lblue + "[!] Update is available, Would you like to install now? (y/n): " + rr)
+                permission = permission.lower()
+                if permission == "n" or permission == "no":
+                    print("[+] Exiting updater")
+                    sys.exit()
+
+        except Exception:
+            print("[-] Unable to connect to connect to server, check internet connection")
+
+    if run_program:
+        # check if app was properly installed into system
+        try:
+            if not os.path.exists("location.txt"):
+                raise Exception("Missing location.txt file")
+            else:
+                print("location.txt is detected")
+        except:
+            print(
+                red + bold + "[!] Error -" + app_name + " was never properly installed to update,\n\tMissing location.txt" + rr)
+            sys.exit()
+
+        # save locations
+        install_location, original_location = get_locations()
+
         print(
-            red + bold + "[!] Error -" + app_name + " was never properly installed to update,\n\tMissing location.txt" + rr)
-        sys.exit()
+            green + bold + "{:30s}\t{}\n{:30s}\t{}\n{:30s}\t{}".
+            format("[+] Detected OS:", operating_system, "[+] Original file location:", original_location,
+                   "[+] Location to install:", install_location) + rr)
 
-    # save locations
-    install_location, original_location = get_locations()
+        try:
+            if operating_system == "Linux":
+                # installs new version
+                subprocess.call("./gitAddress", shell=True, cwd=original_location)
+                print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
 
-    print(
-        green + bold + "{:30s}\t{}\n{:30s}\t{}\n{:30s}\t{}".
-        format("[+] Detected OS:", operating_system, "[+] Original file location:", original_location,
-               "[+] Location to install:", install_location) + rr)
+                uninstall_current_version(original_location)
 
-    try:
-        if operating_system == "Linux":
-            # installs new version
-            subprocess.call("./gitAddress", shell=True, cwd=original_location)
-            print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
+                # move new version to the location of old installation folder
+                subprocess.call("sudo mv /usr/var/malfactory {}".format(install_location), shell=True)
+                print(green + bold + "[+] Moved new files to correct location" + rr)
 
-            uninstall_current_version(original_location)
+                setup_program(original_location)
+            else:
+                # Run stuff for Mac users
 
-            # move new version to the location of old installation folder
-            subprocess.call("sudo mv /usr/var/malfactory {}".format(install_location), shell=True)
-            print(green + bold + "[+] Moved new files to correct location" + rr)
+                # installs new version into ~/Downloads
+                subprocess.call("./gitAddressMac", shell=True, cwd=original_location)
+                print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
 
-            setup_program(original_location)
-        else:
-            # Run stuff for Mac users
+                uninstall_current_version(original_location)
 
-            # installs new version into ~/Downloads
-            subprocess.call("./gitAddressMac", shell=True, cwd=original_location)
-            print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
+                # move new version to the location of old installation folder
+                subprocess.call("sudo mv ~/Downloads/malfactory {}".format(install_location), shell=True)
+                print(green + bold + "[+] Moved new files to correct location" + rr)
 
-            uninstall_current_version(original_location)
-
-            # move new version to the location of old installation folder
-            subprocess.call("sudo mv ~/Downloads/malfactory {}".format(install_location), shell=True)
-            print(green + bold + "[+] Moved new files to correct location" + rr)
-
-            setup_program(original_location)
+                setup_program(original_location)
 
 
-    except Exception:
-        had_error = True
-        raise
+        except Exception:
+            had_error = True
+            raise
 
-    finally:
-        if had_error:
-            print(red + bold + "[!] Error updating " + app_name + rr)
-        else:
-            print(green + bold + "[ OK ] Update complete!!\n" + rr)
-
-
-
+        finally:
+            if had_error:
+                print(red + bold + "[!] Error updating " + app_name + rr)
+            else:
+                print(green + bold + "[ OK ] Update complete!!\n" + rr)
