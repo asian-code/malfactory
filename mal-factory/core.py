@@ -2,6 +2,8 @@
 import random
 import sys
 import os
+
+# removes the Welcome to pygame community message
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import time
 from pygame import mixer
@@ -53,6 +55,7 @@ def textlogo():
 ██║ ╚═╝ ██║██║  ██║███████╗██║     ██║  ██║╚██████╗   ██║   ╚██████╔╝██║  ██║   ██║   
 ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝                                                                                    """ + rr)
 
+
 def maleditorlogo():
     print(green + """
 ███╗   ███╗ █████╗ ██╗     ███████╗██████╗ ██╗████████╗ ██████╗ ██████╗ 
@@ -61,6 +64,7 @@ def maleditorlogo():
 ██║╚██╔╝██║██╔══██║██║     ██╔══╝  ██║  ██║██║   ██║   ██║   ██║██╔══██╗
 ██║ ╚═╝ ██║██║  ██║███████╗███████╗██████╔╝██║   ██║   ╚██████╔╝██║  ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝""")
+
 
 def randomlogo():
     x = random.randint(1, 3)
@@ -77,11 +81,13 @@ def quit():
     print(rr + "[" + lred + "+" + rr + "] Exiting program...." + rr)
     sys.exit()
 
+
 def clear():
     x = 0
     while x <= 3:
         os.system("clear")
         x += 1
+
 
 def laughingskull():
     skull1 = lpurple + """
@@ -132,7 +138,7 @@ def laughingskull():
                                           ███████████████████████
                                         ████████████████████████
                                          █████████████████████
-                    
+
 """
     skull2 = lpurple + """
                                    ██████████████████████
@@ -185,25 +191,25 @@ def laughingskull():
                                         ████████████████████████
                                          █████████████████████
  """ + rr
-    
+
     x = 0
     mixer.init()
     if platform.system() == "Linux":
-        mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
-        mixer.music.play()
+        # mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
+        mixer.music.load("laughingskull.mp3")
     else:
         mixer.music.load("laughingskull.mp3")
-        mixer.music.play()
+
     mixer.music.play()
     while x <= 5:
         print(skull1)
         time.sleep(0.1)
-        clear()
+        os.system("clear")
         print(skull2)
         time.sleep(0.1)
-        clear()
+        os.system("clear")
         x = x + 1
-        
+
 
 def gmailname():
     print("")
