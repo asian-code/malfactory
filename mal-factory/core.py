@@ -2,6 +2,7 @@
 import random
 import sys
 import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import time
 from pygame import mixer
 import platform
