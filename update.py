@@ -36,7 +36,7 @@ def uninstall_current_version(original_location):
 
 def get_locations():
     # get location from location.txt
-    file = open("location.txt", "r")
+    file = open(os.path.join(sys.path[0], "location.txt"), "r")
     location = file.readlines()[0]
     file.close()
 
