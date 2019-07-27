@@ -83,14 +83,10 @@ def main(force=False):  # force update doesnt require user permission to update
     if run_program:
         # check if app was properly installed into system
         try:
-            if not os.path.exists("location.txt"):
-                raise Exception("Missing location.txt file")
-            else:
-                print("location.txt is detected")
+            testfile = open("location.txt", "r")
+            testfile.close()
         except:
-            print(
-                red + bold + "[!] Error -" + app_name + " was never properly installed to update,\n\tMissing location.txt" + rr)
-            raise KeyboardInterrupt
+            print(bold + "[!] Error -" + app_name + " was never properly installed to update,\t[Missing location.txt]" + rr)
 
         # save locations
         install_location, original_location = get_locations()
