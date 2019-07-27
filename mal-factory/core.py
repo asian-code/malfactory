@@ -195,7 +195,8 @@ def laughingskull():
     x = 0
     mixer.init()
     if platform.system() == "Linux":
-        mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
+        mixer.music.load(os.path.join(sys.path[0], "laughingskull.mp3"))
+        # mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
         # mixer.music.load("laughingskull.mp3") doesnt work for linux
     else:
         mixer.music.load("laughingskull.mp3")
