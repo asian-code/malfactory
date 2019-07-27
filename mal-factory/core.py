@@ -191,7 +191,7 @@ def laughingskull():
                                         ████████████████████████
                                          █████████████████████
  """ + rr
-    os.system("resize -s 50 90")
+    os.system("resize -s 70 90")
     x = 0
     mixer.init()
     mixer.music.load(os.path.join(sys.path[0], "laughingskull.mp3"))  # should work for any OS
