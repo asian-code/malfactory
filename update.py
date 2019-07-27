@@ -135,5 +135,5 @@ def start_update(force=False):  # force update doesnt require user permission to
                 print(red + bold + "[!] Error updating " + app_name + rr)
             else:
                 print(green + bold + "[ OK ] Update complete!!\n" + rr)
-                print(green + bold + "Please relaunch Malfactory to finish update")
-                sys.exit()
+                print(green + bold + "Please relaunch Malfactory to finish update"+rr)
+        sys.exit()
