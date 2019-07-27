@@ -86,7 +86,8 @@ def start_update(force=False):  # force update doesnt require user permission to
             testfile = open(os.path.join(sys.path[0], "location.txt"), "r")
             testfile.close()
         except:
-            print(bold + "[!] Error -" + app_name + " was never properly installed to update,\t[Missing location.txt]" + rr)
+            print(
+                bold + "[!] Error -" + app_name + " was never properly installed to update,\t[Missing location.txt]" + rr)
 
         # save locations
         install_location, original_location = get_locations()
@@ -134,3 +135,5 @@ def start_update(force=False):  # force update doesnt require user permission to
                 print(red + bold + "[!] Error updating " + app_name + rr)
             else:
                 print(green + bold + "[ OK ] Update complete!!\n" + rr)
+                print(green + bold + "Please relaunch Malfactory to finish update")
+                sys.exit()
