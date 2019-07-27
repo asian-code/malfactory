@@ -25,7 +25,10 @@ def get_install_location():
     # allows for python to find installation folder
     loc = ""
     try:
-        file = open("location.txt", "r")
+        if operating_system == "Linux":
+            file = open("/usr/share/mal-factory/location.txt", "r")
+        else:
+            file = open("location.txt", "r")
         loc = file.read()
         file.close()
     except FileNotFoundError:
