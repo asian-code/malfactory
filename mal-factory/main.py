@@ -40,13 +40,13 @@ def clear():
 
 def options():
     print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
-    print(" " + ul + "Please Select From The Menu" + rr + "\n")
+    print(" " + blue + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
     print("\t{:10s} Send Malware With Email w/ Gmail".format("[" + purple + "2" + rr + "]"))
     print("\t{:10s} Reloads The Screen".format("[" + purple + "r" + rr + "]"))
     print()  # prints empty line to separate options from functions
-    print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
+    # print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
     print("\t{:10s} Uninstall Malfactory(Comming soon)".format("[" + red + "u" + rr + "]"))
     print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
     print()  # empty line for the looks
@@ -59,7 +59,7 @@ def help():
     # etc , add more stuff here
 
 
-def main():
+def main():  # takes in user input and check for commands
     try:
         while True:
             command = input(red + "Mal" + purple + "Factory" + rr + " > ")
@@ -76,7 +76,7 @@ def main():
             elif command == "help":
                 help()
             else:
-                print(rr + "\nSorry, " + command + " is not a command.\n")
+                print(rr + red + "\nSorry, " + command + " is not a command.\n")
     except KeyboardInterrupt:
         core.quit()
     except Exception:
@@ -85,7 +85,7 @@ def main():
         raise
 
 
-def startup():
+def startup():  # display logo and options
     os.system("resize -s 40 86")
     clear()
     print(line)
@@ -97,15 +97,27 @@ def startup():
     # testing code{
 
     loc = get_install_location()
-    updater_loc=loc+"/update"
+    # if loc != "":
+    updater_loc = loc + "/update"
     print(blue + "[+] Checking for updater in " + rr + updater_loc)
+
+    # method 1
     sys.path.append(loc)
+    print("Method 1")
     try:
         import update
         update.main(force=False)
     except ImportError:
         print(red + "[!] Error trying to update" + rr)
 
+    # method 2
+    sys.path.insert(0, updater_loc)
+    print("Method 2")
+    try:
+        import update
+        update.main(force=False)
+    except ImportError:
+        print(red + "[!] Error trying to update" + rr)
     # } testing code
 
     options()
