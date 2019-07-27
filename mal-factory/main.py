@@ -107,7 +107,7 @@ def startup():  # display logo and options
     sys.path.append(loc)
     try:
         import update
-        update.startupdate()  # not force the update
+        update.start_update()  # not force the update
         print(green + bold + "Please relaunch Malfactory to finish update")
         sys.exit()
     except ImportError:
