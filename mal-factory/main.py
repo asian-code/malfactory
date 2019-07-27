@@ -104,23 +104,13 @@ def startup():  # display logo and options
     updater_loc = loc + "/update"
     print(blue + "[+] Checking for updater in " + rr + updater_loc)
 
-    # method 1
     sys.path.append(loc)
-    print("Method 1")
     try:
         import update
         update.main(force=False)
     except ImportError:
         print(red + "[!] Error trying to update" + rr)
 
-    # method 2
-    sys.path.insert(0, updater_loc)
-    print("Method 2")
-    try:
-        import update
-        update.main(force=False)
-    except ImportError:
-        print(red + "[!] Error trying to update" + rr)
     # } testing code
 
     options()
