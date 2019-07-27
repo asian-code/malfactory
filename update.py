@@ -1,136 +1,120 @@
-#!/usr/bin/python
-import subprocess
+#!/usr/bin/python3
+
+import core
+import maleditor
+import gmailemail
 import os
 import sys
-from urllib.request import urlopen
 import platform
 
-red = '\033[31m'
-green = '\033[92m'
-rr = '\033[0m'  # reset
-bold = '\033[01m'
-lblue = '\033[94m'
-
-app_name = "MalFactory"
-tool_version = 0.1  # [ CHANGE ME ]    -every time there is a important change in the coding of malfactory
 operating_system = platform.system()
+green = core.lgreen
+yellow = core.yellow
+purple = core.lpurple
+red = core.lred
+blue = core.lblue
+cyan = core.lcyan
+rr = core.rr
+bold = core.bold
+ul = core.ul
+line = purple + bold + "--------------------------------------------------------------------------------------" + rr
+tool_version = 0.1  # get tool version from update.py not in main.py
 
 
-def get_latest_version():
-    html = urlopen("https://malfactory.000webhostapp.com/")
-    website = str(html.read())
-    return float(website.split(": ")[1][0:3])
+def get_install_location():
+    # allows for python to find installation folder
+    loc = ""
+    try:
+        if operating_system == "Linux":
+            file = open("/usr/share/mal-factory/location.txt", "r")
+        else:
+            file = open("location.txt", "r")
+        loc = file.read()
+        file.close()
+    except FileNotFoundError:
+        print(red + "[!] Error, location.txt is not located" + rr)
+    return loc
 
 
-def setup_program(original_location):
-    # setup the program for the user
-    print("[+] Running setup.py in - {}/setup.py".format(original_location))
-    subprocess.call("sudo python3 setup.py", shell=True, cwd=original_location)  # cwd changes process directory
+def clear():
+    for i in range(4):
+        os.system("clear")
 
 
-def uninstall_current_version(original_location):
-    # uninstalls current version
-    print("[+] Uninstalling old version of " + app_name)
-    subprocess.call("sudo python3 uninstaller.py", shell=True, cwd=original_location)
+def options():
+    print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
+    print(" " + blue + ul + "Please Select From The Menu" + rr + "\n")
+
+    print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
+    print("\t{:10s} Send Malware With Email w/ Gmail".format("[" + purple + "2" + rr + "]"))
+    print("\t{:10s} Reloads The Screen".format("[" + purple + "r" + rr + "]"))
+    print()  # prints empty line to separate options from functions
+    # print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
+    print("\t{:10s} Uninstall Malfactory(Comming soon)".format("[" + red + "u" + rr + "]"))
+    print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
+    print()  # empty line for the looks
 
 
-def get_locations():
-    # get location from location.txt
-    file = open("location.txt", "r")
-    location = file.readlines()[0]
-    file.close()
-
-    old_location = location.split("/")
-    old_location.pop(0)  # remove first element (empty element)
-    original_loc = old_location.pop()  # remove last element (name of installation folder)
-    original_loc = original_loc.split("\\")[0]  # removes the \n inside the string
-
-    install_loc = ""
-    for i in old_location:
-        install_loc += "/{}".format(i)
-
-    original_location = str(install_loc + "/" + original_loc)
-    return install_loc, original_location
+def help():
+    print("Help menu")
+    print("[1] MalEditor -is used for making malware using \"Malscript\", you can write and save your scripts here")
+    print("[2] Reloads The Screen -is used for refreshing the screen")
+    # etc , add more stuff here
 
 
-def main(force=False):  # force update doesnt require user permission to update
-    had_error = False
-    run_program = True  # if wants to run updater
-    if not force:
-        # check if an update is needed
-        try:
-            if tool_version >= get_latest_version():
-                print(lblue + "[+] You seem to have the latest version of {}".format(app_name))
-
-                # testing code {
-                # update_anyway = input(lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(app_name, rr))
-                update_anyway = "n"
-                update_anyway = update_anyway.lower()
-                if update_anyway == "n" or update_anyway == "no":
-                    run_program = False
-                # } testing code
-
+def main():  # takes in user input and check for commands
+    try:
+        while True:
+            command = input(red + "Mal" + purple + "Factory" + rr + " > ")
+            command = command.lower()
+            if command == "1":
+                maleditor.startup()
+            if command == "2":
+                gmailemail.startup()
+            elif command == "r":
+                clear()
+                startup()
+            elif command == "99" or command == "exit" or command == "quit":
+                core.quit()
+            elif command == "help":
+                help()
             else:
-                permission = input(lblue + "[*] Update is available, Would you like to install now? (y/n): " + rr)
-                permission = permission.lower()
-                if permission == "n" or permission == "no":
-                    print("[+] Exiting updater")
-                    run_program = False
-
-        except Exception:
-            print("[-] Unable to connect to connect to server, check internet connection")
-
-    if run_program:
-        # check if app was properly installed into system
-        try:
-            testfile = open(os.path.join(sys.path[0], "location.txt"), "r")
-            testfile.close()
-        except:
-            print(bold + "[!] Error -" + app_name + " was never properly installed to update,\t[Missing location.txt]" + rr)
-
-        # save locations
-        install_location, original_location = get_locations()
-
+                print(rr + red + "\nSorry, " + command + " is not a command.\n")
+    except KeyboardInterrupt:
+        core.quit()
+    except Exception:
         print(
-            green + bold + "{:30s}\t{}\n{:30s}\t{}\n{:30s}\t{}".
-            format("[+] Detected OS:", operating_system, "[+] Original file location:", original_location,
-                   "[+] Location to install:", install_location) + rr)
-
-        try:
-            if operating_system == "Linux":
-                # installs new version
-                subprocess.call("./gitAddress", shell=True, cwd=original_location)
-                print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
-
-                uninstall_current_version(original_location)
-
-                # move new version to the location of old installation folder
-                subprocess.call("sudo mv /usr/var/malfactory {}".format(install_location), shell=True)
-                print(green + bold + "[+] Moved new files to correct location" + rr)
-
-                setup_program(original_location)
-            else:
-                # Run stuff for Mac users
-
-                # installs new version into ~/Downloads
-                subprocess.call("./gitAddressMac", shell=True, cwd=original_location)
-                print(green + bold + "[ OK ] Installed new version of " + app_name + rr)
-
-                uninstall_current_version(original_location)
-
-                # move new version to the location of old installation folder
-                subprocess.call("sudo mv ~/Downloads/malfactory {}".format(install_location), shell=True)
-                print(green + bold + "[+] Moved new files to correct location" + rr)
-
-                setup_program(original_location)
+            rr + "\n[" + red + "+" + rr + "] Error: something went wrong \n")  # Need general error message since this try is the whole program instead of a specific block of code
+        raise
 
 
-        except Exception:
-            had_error = True
-            raise
+def startup():  # display logo and options
+    os.system("resize -s 40 86")
+    clear()
+    print(line)
+    core.randomlogo()
+    print(line + "\n")
+    core.textlogo()
+    print(blue + "[+] Checking for updates..." + rr)
 
-        finally:
-            if had_error:
-                print(red + bold + "[!] Error updating " + app_name + rr)
-            else:
-                print(green + bold + "[ OK ] Update complete!!\n" + rr)
+    # testing code{
+
+    loc = get_install_location()
+    # if loc != "":
+    updater_loc = loc + "/update"
+    print(blue + "[+] Checking for updater in " + rr + updater_loc)
+
+    sys.path.append(loc)
+    try:
+        import update
+        update.main(force=False)
+        print(green + bold + "Please relaunch Malfactory to finish update")
+        sys.exit()
+    except ImportError:
+        print(red + "[!] Error trying to update" + rr)
+
+    # } testing code
+
+    options()
+
+    main()
