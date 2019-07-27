@@ -92,18 +92,19 @@ def startup():
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    print(blue + " [+] Checking for updates..." + rr)
+    print(blue + "[+] Checking for updates..." + rr)
 
     # testing code{
 
     loc = get_install_location()
-    print(blue + " [+] Checking for updater: " + rr + loc)
+    updater_loc=loc+"/update"
+    print(blue + "[+] Checking for updater in " + rr + updater_loc)
     sys.path.append(loc)
     try:
         import update
         update.main(force=False)
     except ImportError:
-        print(red + "[!] Error importing update" + rr)
+        print(red + "[!] Error trying to update" + rr)
 
     # } testing code
 
