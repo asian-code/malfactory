@@ -194,12 +194,11 @@ def laughingskull():
     os.system("resize -s 50 90")
     x = 0
     mixer.init()
-    if platform.system() == "Linux":
-        mixer.music.load(os.path.join(sys.path[0], "laughingskull.mp3"))
-        # mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
-        # mixer.music.load("laughingskull.mp3") doesnt work for linux
-    else:
-        mixer.music.load("laughingskull.mp3")
+    mixer.music.load(os.path.join(sys.path[0], "laughingskull.mp3"))  # should work for any OS
+    # mixer.music.load("/usr/share/mal-factory/laughingskull.mp3")
+    # mixer.music.load("laughingskull.mp3")
+    # doesnt work cuz unable to detect the mp3 file.
+    # (This script is running from another script so when checking in local dir, the local dir is from malfactory.py and not inside of mal-factory)
 
     mixer.music.play()
     while x <= 5:
