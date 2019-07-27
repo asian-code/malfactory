@@ -74,11 +74,11 @@ def start_update(force=False):  # force update doesnt require user permission to
                 permission = input(lblue + "[*] Update is available, Would you like to install now? (y/n): " + rr)
                 permission = permission.lower()
                 if permission == "n" or permission == "no":
-                    print("[+] Exiting updater")
+                    # print("[+] Exiting updater")
                     run_program = False
 
         except Exception:
-            print("[-] Unable to connect to connect to server, check internet connection")
+            print(red + "[-] Unable to connect to connect to server, check internet connection" + rr)
 
     if run_program:
         # check if app was properly installed into system
@@ -135,5 +135,5 @@ def start_update(force=False):  # force update doesnt require user permission to
                 print(red + bold + "[!] Error updating " + app_name + rr)
             else:
                 print(green + bold + "[ OK ] Update complete!!\n" + rr)
-                print(green + bold + "Please relaunch Malfactory to finish update"+rr)
+                print(green + bold + "Please relaunch Malfactory to finish update" + rr)
         sys.exit()
