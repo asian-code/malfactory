@@ -53,7 +53,7 @@ try:
 
     # subprocess.call("pip3 install curses",shell=True)
     # subprocess.call("pip3 install playsound, shell=True")
-
+    subprocess.call("pip3 install pygame, shell=True")
     # save location before file burst
     current_dir = get_current_dir()
     print(green + "[+] Detected location: \t" + current_dir + rr)
