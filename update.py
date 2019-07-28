@@ -19,7 +19,9 @@ operating_system = platform.system()
 def get_latest_version():
     html = urlopen("https://malfactory.000webhostapp.com/")
     website = str(html.read())
-    return float(website.split(": ")[1][0:3])
+    ver = float(website.split("# ")[1])
+    print(ver)
+    return ver
 
 
 def setup_program(original_location):
@@ -70,7 +72,7 @@ def start_update(force=False):  # force update doesnt require user permission to
                 if update_anyway == "n" or update_anyway == "no":
                     run_program = False
                 # } testing code
-            elif float(abs(latestversion - tool_version)) > .2:
+            elif latestversion - tool_version > .2:
                 print(red + "[!] Your current tool version is to outdated, Starting Force update..." + rr)
                 run_program = True
             else:
