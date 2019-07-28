@@ -44,8 +44,9 @@ Python Library (Pip3):
 * [platform](https://docs.python.org/3/library/platform.html)
 * [playsound](https://pypi.org/project/playsound/)
 
-For click on links more info on how to use:
+About/How to use:
 * [MalEditor](https://github.com/asian-code/malfactory/wiki/MalEditor)
+* [MalScript / All Commands](https://www.pornhub.com)
 
 ------------------------------------------------------------------------
 
