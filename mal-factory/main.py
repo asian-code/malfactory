@@ -51,8 +51,8 @@ def options():
     print()  # prints empty line to separate options from functions
     # print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
     print("\t{:10s} Uninstall Malfactory".format("[" + red + "u" + rr + "]"))
-    print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
     print("\t{:10s} Report bugs/glitches ".format("[" + purple + "z" + rr + "]"))
+    print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
     print()  # empty line for the looks
 
 
