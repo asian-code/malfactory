@@ -50,8 +50,9 @@ def options():
     print("\t{:10s} Reloads The Screen".format("[" + purple + "r" + rr + "]"))
     print()  # prints empty line to separate options from functions
     # print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
-    print("\t{:10s} Uninstall Malfactory(Comming soon)".format("[" + red + "u" + rr + "]"))
+    print("\t{:10s} Uninstall Malfactory".format("[" + red + "u" + rr + "]"))
     print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
+    print("\t{:10s} Report bugs/glitches ".format("[" + purple + "" + rr + "]"))
     print()  # empty line for the looks
 
 
@@ -69,7 +70,7 @@ def main():  # takes in user input and check for commands
             command = command.lower()
             if command == "1":
                 maleditor.startup()
-            if command == "2":
+            elif command == "2":
                 gmailemail.startup()
             elif command == "r":
                 clear()
@@ -78,6 +79,21 @@ def main():  # takes in user input and check for commands
                 core.quit()
             elif command == "help":
                 help()
+            elif command == "u":
+                dontgo = input(red + bold + "[!] Are you sure you want to UNINSTALL Malfactory? (y/n):" + rr)
+                dontgo = dontgo.lower()
+                if dontgo == "y":
+                    loc = get_install_location()
+                    uninstall_loc = loc + "/uninstaller"
+                    print(blue + "[+] Checking for uninstaller in " + rr + uninstall_loc)
+
+                    sys.path.append(loc)
+                    try:
+                        import uninstaller
+                    except ImportError:
+                        print(red + "[!] Error trying to uninstall" + rr)
+
+
             else:
                 print(rr + red + "\nSorry, " + command + " is not a command.\n")
     except KeyboardInterrupt:
