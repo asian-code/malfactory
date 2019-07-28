@@ -44,6 +44,9 @@ Python Library (Pip3):
 * [platform](https://docs.python.org/3/library/platform.html)
 * [playsound](https://pypi.org/project/playsound/)
 
+For click on links more info on how to use:
+* [MalEditor](https://github.com/asian-code/malfactory/wiki/MalEditor)
+
 ------------------------------------------------------------------------
 
 ## <p align="center"> ![download logo](https://i.ibb.co/fXV1fGD/download.png") &nbsp; How to Install &nbsp; ![download logo](https://i.ibb.co/fXV1fGD/download.png") </p>
