@@ -3,8 +3,8 @@
 import core
 import main
 import platform
-
-p = platform.system()
+import sys
+import os
 
 rr = core.rr
 red = core.lred
@@ -15,14 +15,14 @@ blue = core.lblue
 
 # maleditor is only for Editing/Saving Malscript files. Another program will convert the malscript to code for target platform
 def options():
-    print(rr + "\n\t\t\t  " + ul + "Options" + rr + ":")
-    print("{}\t\t{}".format("  [" + green + "s" + rr + "] Save file",
-                            "\t\t  [" + green + "r" + rr + "] Remove a line"))
-    print("{}  {}".format("  [" + green + "o" + rr + "] Open from txt file",
-                          "\t\t  [" + green + "e" + rr + "] Exit MalEditor \n"))
+    print(rr + "\n\t  " + ul + "Options" + rr + ":")
+    print("{:30s}{:30s}".format("  [" + green + "s" + rr + "] Save file", "[" + green + "r" + rr + "] Remove a line"))
+    print("{:30s}{:30s}".format("  [" + green + "o" + rr + "] Open from txt file",
+                                "[" + green + "e" + rr + "] Exit MalEditor"))
+    print()  # empty line separator
 
 
-def show_file(file: list,filename="File"):
+def show_file(file: list, filename: str):
     if len(file) > 0:
         num = 1
         marker = "-" * 9
@@ -56,10 +56,10 @@ def check_command(com, raw_commands: list):
     return False
 
 
-def set_screen(file_to_show):
+def set_screen(file_to_show, fname):
     core.clear()
     options()
-    show_file(file_to_show)
+    show_file(file_to_show, fname)
 
 
 def startup():
@@ -68,13 +68,14 @@ def startup():
     print("[" + green + "OK" + rr + "] Mal-editor Successfully Started!")
     core.maleditorlogo()
     options()
+
     whole_file = []
-
-    if p == "linux":
-        raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
-    else:
-        raw_cmd = read_from_file("~/Documents/mal-factor/allcmds.txt")
-
+    CurrentFileName = "Untitled"
+    # if operating_system == "Linux":
+    #     raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
+    # else:
+    #     raw_cmd = read_from_file("~/Documents/mal-factor/allcmds.txt")
+    raw_cmd = read_from_file(os.path.join(sys.path[0], "allcmds.txt"))
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
@@ -86,12 +87,13 @@ def startup():
                     whole_file.pop(int(command.split(" ")[1]))
                 except:
                     print("[!] Error trying to remove a line")
-                set_screen(whole_file)
+                set_screen(whole_file, CurrentFileName)
 
 
             elif command == "s":
                 try:
-                    filename = input(blue + "[*] File name " + rr + "> ")
+                    filename = input(blue + "[*] Save as" + rr + ": ")
+                    CurrentFileName = filename
                     savefile = open("~/{}.txt".format(filename), "w")
                     for element in whole_file:
                         savefile.write(element + "\n")
@@ -103,14 +105,14 @@ def startup():
 
             elif check_command(command, raw_cmd):
                 whole_file.append(command)
-                set_screen(whole_file)
+                set_screen(whole_file, CurrentFileName)
             else:
-                set_screen(whole_file)
+                set_screen(whole_file, CurrentFileName)
                 print(rr + "\n[" + red + "-" + rr + "] Not a valid command: " + command)
 
             core.clear()
             options()
-            show_file(whole_file)
+            show_file(whole_file, CurrentFileName)
 
     except KeyboardInterrupt:
         main.startup()
