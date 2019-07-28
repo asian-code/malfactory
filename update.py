@@ -70,7 +70,7 @@ def start_update(force=False):  # force update doesnt require user permission to
                 if update_anyway == "n" or update_anyway == "no":
                     run_program = False
                 # } testing code
-            elif abs(latestversion - tool_version) > .2:
+            elif float(abs(latestversion - tool_version)) > .2:
                 print(red + "[!] Your current tool version is to outdated, Starting Force update..." + rr)
                 run_program = True
             else:
@@ -82,7 +82,7 @@ def start_update(force=False):  # force update doesnt require user permission to
 
         except Exception:
             print(red + "[-] Connection to server error, check internet connection" + rr)
-            raise 
+            raise
 
     if run_program:
         # check if app was properly installed into system
