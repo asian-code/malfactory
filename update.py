@@ -59,7 +59,8 @@ def start_update(force=False):  # force update doesnt require user permission to
     if not force:
         # check if an update is needed
         try:
-            if tool_version >= get_latest_version():
+            latestversion = get_latest_version()
+            if tool_version >= latestversion:
                 print(green + "[+] You seem to have the latest version of {}".format(app_name))
 
                 # testing code {
@@ -69,7 +70,9 @@ def start_update(force=False):  # force update doesnt require user permission to
                 if update_anyway == "n" or update_anyway == "no":
                     run_program = False
                 # } testing code
-
+            elif abs(latestversion - tool_version) > .2:
+                print(red + "[!] Your current tool version is to outdated, Starting Force update..." + rr)
+                run_program = True
             else:
                 permission = input(green + "[*] Update is available, Would you like to install now? (y/n): " + rr)
                 permission = permission.lower()
