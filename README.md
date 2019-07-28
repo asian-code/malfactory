@@ -57,8 +57,8 @@ Python Library (Pip3):
 
 ## <p align="center"> <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> &nbsp; How to Run &nbsp; <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> </p>
 
-Open your terminal and type:
-`chmod 755 -R *`
+Open your terminal, navigate to the malfactory installation folder and type:
+`chmod +x *`
 and
 `sudo python3 setup.py`
 <br>
@@ -68,12 +68,12 @@ and
 
 #### <p align="center"> Once Finished Setup (For Linux) </p> <br>
 
-Type and enter `malfactory` to run the tool **or** Open the application in your application menu.
+Type and enter `malfactory` in the terminal to run the tool **or** Open the application in your application menu.
 <br><br>
 
 #### <p align="center"> Once Finished Setup (For Mac) </p> <br>
 
-Go to `~/Documents/malfactory` and type `sudo python3 malfactory.py`.
+Go to `~/Documents/mal-factory` and type `sudo python3 malfactory.py`.
 
 #### <p align="center"> Troubleshooting </p>
 
