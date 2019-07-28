@@ -52,7 +52,7 @@ def options():
     # print("\t{:10s} Check for Updates(Coming soon)".format("[" + purple + "c" + rr + "]"))
     print("\t{:10s} Uninstall Malfactory".format("[" + red + "u" + rr + "]"))
     print("\t{:10s} Exit ".format("[" + purple + "99" + rr + "]"))
-    print("\t{:10s} Report bugs/glitches ".format("[" + purple + "" + rr + "]"))
+    print("\t{:10s} Report bugs/glitches ".format("[" + purple + "z" + rr + "]"))
     print()  # empty line for the looks
 
 
@@ -79,6 +79,9 @@ def main():  # takes in user input and check for commands
                 core.quit()
             elif command == "help":
                 help()
+            elif command == "z":
+                print(
+                    blue + "Please submit any bugs/issues/glitches at this link :\n" + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr)
             elif command == "u":
                 dontgo = input(red + bold + "[!] Are you sure you want to UNINSTALL Malfactory? (y/n):" + rr)
                 dontgo = dontgo.lower()
