@@ -81,7 +81,8 @@ def start_update(force=False):  # force update doesnt require user permission to
                     run_program = False
 
         except Exception:
-            print(red + "[-] Unable to connect to connect to server, check internet connection" + rr)
+            print(red + "[-] Connection to server error, check internet connection" + rr)
+            raise 
 
     if run_program:
         # check if app was properly installed into system
