@@ -5,9 +5,7 @@ import maleditor
 import gmailemail
 import os
 import sys
-import platform
 
-operating_system = platform.system()
 green = core.lgreen
 yellow = core.yellow
 purple = core.lpurple
@@ -18,17 +16,14 @@ rr = core.rr
 bold = core.bold
 ul = core.ul
 line = purple + bold + "--------------------------------------------------------------------------------------" + rr
-tool_version = 0.1  # get tool version from update.py not in main.py
+toolVersion = 0  # get tool version from update.py not in main.py
 
 
 def get_install_location():
     # allows for python to find installation folder
     loc = ""
     try:
-        if operating_system == "Linux":
-            file = open("/usr/share/mal-factory/location.txt", "r")
-        else:
-            file = open("location.txt", "r")
+        file = open(os.path.join(sys.path[0], "location.txt"), "r")
         loc = file.read()
         file.close()
     except FileNotFoundError:
@@ -42,7 +37,10 @@ def clear():
 
 
 def options():
-    print(" " + purple + bold + "Tool Version: " + rr + str(tool_version) + "\n")
+    global toolVersion
+    if toolVersion == 0:
+        toolVersion = "Unable to determine version number"
+    print(" " + purple + bold + "Tool Version: " + rr + str(toolVersion) + "\n")
     print(" " + blue + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
@@ -56,7 +54,7 @@ def options():
     print()  # empty line for the looks
 
 
-def help():
+def helpMenu():
     print("Help menu")
     print("[1] MalEditor -is used for making malware using \"Malscript\", you can write and save your scripts here")
     print("[2] Reloads The Screen -is used for refreshing the screen")
@@ -78,7 +76,7 @@ def main():  # takes in user input and check for commands
             elif command == "99" or command == "exit" or command == "quit":
                 core.quit()
             elif command == "help":
-                help()
+                helpMenu()
             elif command == "z":
                 print(
                     blue + "Please submit any bugs/issues/glitches at this link :\n" + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr)
@@ -96,7 +94,6 @@ def main():  # takes in user input and check for commands
                     except ImportError:
                         print(red + "[!] Error trying to uninstall" + rr)
 
-
             else:
                 print(rr + red + "\nSorry, " + command + " is not a command.\n")
     except KeyboardInterrupt:
@@ -108,7 +105,7 @@ def main():  # takes in user input and check for commands
 
 
 def startup():  # display logo and options
-    os.system("resize -s 40 86")
+    os.system("resize -s 50 86")
     clear()
     print(line)
     core.randomlogo()
@@ -126,7 +123,10 @@ def startup():  # display logo and options
     sys.path.append(loc)
     try:
         import update
-        update.start_update()  # not force the update
+        update.start_update()  # not force the update unless really outdated
+        global toolVersion
+        toolVersion = update.tool_version
+
     except ImportError:
         print(red + "[!] Error trying to update" + rr)
 
