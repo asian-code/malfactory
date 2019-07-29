@@ -40,8 +40,8 @@ def options():
     global toolVersion
     if toolVersion == 0:
         toolVersion = "Unable to determine version number"
-    print(" " + purple + bold + "Tool Version: " + rr + str(toolVersion) + "\n")
-    print(" " + blue + ul + "Please Select From The Menu" + rr + "\n")
+    print("" + purple + bold + "Tool Version: " + rr + str(toolVersion) + "\n")
+    print(" " + white + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
     print("\t{:10s} Send Malware With Email w/ Gmail".format("[" + purple + "2" + rr + "]"))
@@ -111,14 +111,13 @@ def startup():  # display logo and options
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    print(blue + "[+] Checking for updates..." + rr)
+    print(green + "[+] Checking for updates... " + rr)
 
     # testing code{
 
     loc = get_install_location()
     # if loc != "":
     updater_loc = loc + "/update"
-    print(blue + "[+] Checking for updater in " + rr + updater_loc)
 
     sys.path.append(loc)
     try:
@@ -128,8 +127,10 @@ def startup():  # display logo and options
         toolVersion = update.tool_version
 
     except ImportError:
-        print(red + "[!] Error trying to update" + rr)
+        toolVersion = red + "[!] Error trying to update." + rr
 
+    print(green + "[+] Checking for updater in " + rr + updater_loc + " | " + toolVersion)
+        
     # } testing code
 
     options()
