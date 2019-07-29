@@ -50,7 +50,7 @@ def options():
     global toolVersion
     if toolVersion == 0:
         toolVersion = "Unable to determine version number"
-    print(bold + core.pink + "[*] Tool Version:" + pink + "\t\t         | \t" + rr + str(toolVersion) + "\n")
+    print(bold + core.pink + "[*] Tool Version:" + rr + str(toolVersion) + "\n")
     print(" " + rr + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
