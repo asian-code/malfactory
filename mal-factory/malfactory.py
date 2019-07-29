@@ -16,8 +16,7 @@ def get_latest_version():
     return float(website.split("# ")[1])
 
 
-# core.laughingskull()
-print("Testing code for mac{")
+print("Testing code for mac {")
 
 print("Method 1 test")
 try:
@@ -25,7 +24,6 @@ try:
     test1.close()
 except:
     print("Error with Method 1")
-
 
 print("Method 2 test")
 try:
@@ -39,6 +37,6 @@ try:
 except:
     print("Error talking with server")
 
-
-print("Testing code for mac END")
-main.startup()
+print(" } Testing code for mac END")
+# core.laughingskull()
+# main.startup()
