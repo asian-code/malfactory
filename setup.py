@@ -8,7 +8,7 @@ red = '\033[31m'
 green = '\033[92m'
 rr = '\033[0m'  # reset
 bold = '\033[01m'
-p = platform.system()
+operating_system = platform.system()
 
 
 def get_current_dir():
@@ -53,14 +53,17 @@ try:
 
     # subprocess.call("pip3 install curses",shell=True)
     # subprocess.call("pip3 install playsound, shell=True")
-    subprocess.call("pip3 install pygame, shell=True")
+    if operating_system == "Linux":
+        subprocess.call("sudo apt-get install python-pygame", shell=True)
+    else:
+        subprocess.call("pip3 install pygame, shell=True")
     # save location before file burst
     current_dir = get_current_dir()
     print(green + "[+] Detected location: \t" + current_dir + rr)
     save_folder_location(current_dir)
     subprocess.call("chmod 755 -R *", shell=True)
 
-    if p == "Linux":
+    if operating_system == "Linux":
         subprocess.call("sudo mv mal-factory /usr/share", shell=True)  # folder
         print("[+] moved mal-factory folder to /usr/share")
 
@@ -70,8 +73,8 @@ try:
         subprocess.call("sudo mv malfactory /usr/bin", shell=True)  # bash file
         print("[+] moved bash file to /usr/bin")
     else:
-        subprocess.call("sudo mv mal-factory ~/Documents", shell=True)  # folder
-        print("[+] moved mal-factory folder to ~/Documents")
+        subprocess.call("sudo mv mal-factory ~", shell=True)  # folder
+        print("[+] moved mal-factory folder to ~/")
 
 
 except:
