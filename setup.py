@@ -75,7 +75,7 @@ try:
     else:
         subprocess.call("sudo mv mal-factory ~", shell=True)  # folder
         print("[+] moved mal-factory folder to ~/")
-        subprocess.call('alias malfactory="sudo python3 ~/mal-factory/malfactory.py"',shell=True)
+        subprocess.call("alias malfactory=\"sudo python3 ~/mal-factory/malfactory.py\"", shell=True)
 
 
 except:
