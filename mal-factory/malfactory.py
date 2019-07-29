@@ -6,7 +6,7 @@ import core
 import sys
 import os
 
-core.laughingskull()
+#core.laughingskull()
 print("Testing code for mac{")
 print("Method 1 test")
 try:
