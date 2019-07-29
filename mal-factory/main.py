@@ -6,6 +6,7 @@ import gmailemail
 import os
 import sys
 
+pink = core.pink
 green = core.lgreen
 yellow = core.yellow
 purple = core.lpurple
@@ -29,7 +30,7 @@ def get_install_location():
         locationfound = (rr + "[+] Sucessfully found location.txt!" + rr)
     except FileNotFoundError:
         locationfound = (red + "[!] Error, location.txt is not located" + rr)
-    print(green + "[+] Checking for updates... \t\t | \t" + locationfound)
+    print(core.lpurple + "[+] Checking for updates... \t\t | \t" + locationfound)
     return loc
 
 def clear():
@@ -41,7 +42,7 @@ def options():
     global toolVersion
     if toolVersion == 0:
         toolVersion = "Unable to determine version number"
-    print(bold + core.pink + "[*] Tool Version:" + green + "\t\t         | \t" + rr + str(toolVersion) + "\n")
+    print(bold + core.pink + "[*] Tool Version:" + pink + "\t\t         | \t" + rr + str(toolVersion) + "\n")
     print(" " + rr + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
@@ -79,7 +80,7 @@ def main():  # takes in user input and check for commands
             elif command == "help":
                 helpMenu()
             elif command == "z":
-                print("\n" + rr + "Please submit any bugs/issues/glitches at this link :\n" + cyan + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr + "\n")
+                print("\n" + rr + "Please submit any bugs/issues/glitches at this link:\n" + cyan + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr + "\n")
             elif command == "u":
                 dontgo = input(red + bold + "[!] Are you sure you want to UNINSTALL Malfactory? (y/n):" + rr)
                 dontgo = dontgo.lower()
@@ -128,7 +129,7 @@ def startup():  # display logo and options
     except ImportError:
         toolVersion = red + "[!] Error trying to update." + rr
 
-    print(green + "[+] Checking for updater in " + rr + updater_loc + green + "\t | \t" + rr + toolVersion)
+    print(core.lpurple + "[+] Checking for updater in " + rr + updater_loc + core.lpurple + "\t | \t" + rr + toolVersion)
 
 # } testing code
 
