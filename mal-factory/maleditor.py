@@ -11,6 +11,7 @@ red = core.lred
 ul = core.ul
 green = core.lgreen
 blue = core.lblue
+operating_system = platform.system()
 
 
 # maleditor is only for Editing/Saving Malscript files. Another program will convert the malscript to code for target platform
@@ -71,11 +72,11 @@ def startup():
 
     whole_file = []
     CurrentFileName = "Untitled"
-    # if operating_system == "Linux":
-    #     raw_cmd = read_from_file("/usr/share/mal-factory/allcmds.txt")
-    # else:
-    #     raw_cmd = read_from_file("~/Documents/mal-factor/allcmds.txt")
-    raw_cmd = read_from_file(os.path.join(sys.path[0], "allcmds.txt"))
+    if operating_system == "Linux":
+        raw_cmd = read_from_file(os.path.join(sys.path[0], "allcmds.txt"))
+    else:
+        raw_cmd = read_from_file("~/mal-factory/allcmds.txt")
+
     try:
         while True:
             command = input(red + "Mal" + green + "Editor" + rr + " > ")
