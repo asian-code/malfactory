@@ -140,7 +140,7 @@ def startup():  # display logo and options
     except ImportError:
         toolVersion = red + "[!] Error trying to update." + rr
 
-    print(core.lpurple + "[+] Checking for updater in " + rr + updater_loc + core.lpurple + "\t | \t" + rr + str(toolVersion))
+    print(core.lpurple + "[+] Checking for updater in " + rr + updater_loc)
 
 # } testing code
 
