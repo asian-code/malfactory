@@ -38,7 +38,10 @@ def uninstall_current_version(original_location):
 
 def get_locations():
     # get location from location.txt
-    file = open(os.path.join(sys.path[0], "location.txt"), "r")
+    if operating_system == "Linux":
+        file = open(os.path.join(sys.path[0], "location.txt"), "r")
+    else:
+        file = open("location.txt")
     location = file.readlines()[0]
     file.close()
 
@@ -89,7 +92,11 @@ def start_update(force=False):  # force update doesnt require user permission to
     if run_program:
         # check if app was properly installed into system
         try:
-            testfile = open(os.path.join(sys.path[0], "location.txt"), "r")
+            if operating_system == "Linux":
+                testfile = open(os.path.join(sys.path[0], "location.txt"), "r")
+            else:
+                testfile = open("location.txt")
+
             testfile.close()
         except:
             print(
