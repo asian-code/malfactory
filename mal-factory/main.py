@@ -29,7 +29,8 @@ def get_install_location():
         if operating_system == "Linux":
             file = open(os.path.join(sys.path[0], "location.txt"), "r")
         else:
-            file = open("location.txt")
+            file = open(os.path.join(sys.path[0], "location.txt"), "r")
+            # file = open("location.txt", "r")
         loc = file.read()
         file.close()
         # locationfound = (rr + "[+] Sucessfully found location.txt!" + rr)
