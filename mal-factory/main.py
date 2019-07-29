@@ -142,7 +142,6 @@ def startup():  # display logo and options
 
     print(core.lpurple + "[+] Checking for updater in " + rr + updater_loc + core.lpurple + "\t | \t" + rr + str(toolVersion))
 
-
 # } testing code
 
 startup()
