@@ -19,9 +19,9 @@ operating_system = platform.system()
 def get_latest_version():
     html = urlopen("https://malfactory.000webhostapp.com/")
     website = str(html.read())
-    ver = float(website.split("# ")[1])
-    print("Latest version: "+str(ver))
-    return ver
+    # ver = float(website.split("# ")[1])
+    # print("Latest version: " + str(ver))
+    return float(website.split("# ")[1])
 
 
 def setup_program(original_location):
@@ -65,29 +65,29 @@ def start_update(force=False):  # force update doesnt require user permission to
         # check if an update is needed
         try:
             latestversion = get_latest_version()
-            if tool_version >= latestversion:
-                print(green + "[+] You seem to have the latest version of {}".format(app_name))
-
-                # testing code {
-                # update_anyway = input(lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(app_name, rr))
-                update_anyway = "n"
-                update_anyway = update_anyway.lower()
-                if update_anyway == "n" or update_anyway == "no":
-                    run_program = False
-                # } testing code
-            elif latestversion - tool_version > .2:
-                print(red + "[!] Your current tool version is to outdated, Starting Force update..." + rr)
-                run_program = True
-            else:
-                permission = input(green + "[*] Update is available, Would you like to install now? (y/n): " + rr)
-                permission = permission.lower()
-                if permission == "n" or permission == "no":
-                    # print("[+] Exiting updater")
-                    run_program = False
-
         except Exception:
             print(red + "[-] Connection to server error, check internet connection" + rr)
             raise
+
+        if tool_version >= latestversion:
+            print(green + "[+] You seem to have the latest version of {}".format(app_name))
+
+            # testing code {
+            # update_anyway = input(lblue + "[*] You seem to have the latest version of {}. Would you like to update anyway? (y/n) :{}".format(app_name, rr))
+            update_anyway = "n"
+            update_anyway = update_anyway.lower()
+            if update_anyway == "n" or update_anyway == "no":
+                run_program = False
+            # } testing code
+        elif latestversion - tool_version > .2:
+            print(red + "[!] Your current tool version is to outdated, Starting Force update..." + rr)
+            run_program = True
+        else:
+            permission = input(green + "[*] Update is available, Would you like to install now? (y/n): " + rr)
+            permission = permission.lower()
+            if permission == "n" or permission == "no":
+                # print("[+] Exiting updater")
+                run_program = False
 
     if run_program:
         # check if app was properly installed into system
