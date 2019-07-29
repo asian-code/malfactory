@@ -20,7 +20,7 @@ def get_latest_version():
     html = urlopen("https://malfactory.000webhostapp.com/")
     website = str(html.read())
     ver = float(website.split("# ")[1])
-    print(ver)
+    # print(ver)
     return ver
 
 
