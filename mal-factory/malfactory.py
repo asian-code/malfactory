@@ -21,4 +21,4 @@ try:
 except:
     print("Error with Method 2")
     print("Testing code for mac END")
-main.startup()
+#main.startup()
