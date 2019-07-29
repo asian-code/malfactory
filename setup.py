@@ -56,7 +56,7 @@ try:
     if operating_system == "Linux":
         subprocess.call("sudo apt-get install python-pygame", shell=True)
     else:
-        subprocess.call("pip3 install pygame, shell=True")
+        subprocess.call("sudo pip3 install pygame", shell=True)
     # save location before file burst
     current_dir = get_current_dir()
     print(green + "[+] Detected location: \t" + current_dir + rr)
