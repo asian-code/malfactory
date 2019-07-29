@@ -26,10 +26,11 @@ def get_install_location():
         file = open(os.path.join(sys.path[0], "location.txt"), "r")
         loc = file.read()
         file.close()
+        locationfound = (rr + "[+] Sucessfully found location.txt!" + rr)
     except FileNotFoundError:
-        print(red + "[!] Error, location.txt is not located" + rr)
+        locationfound = (red + "[!] Error, location.txt is not located" + rr)
+    print(green + "[+] Checking for updates... \t\t | \t" + locationfound)
     return loc
-
 
 def clear():
     for i in range(4):
@@ -40,8 +41,8 @@ def options():
     global toolVersion
     if toolVersion == 0:
         toolVersion = "Unable to determine version number"
-    print("" + purple + bold + "Tool Version: " + rr + str(toolVersion) + "\n")
-    print(" " + white + ul + "Please Select From The Menu" + rr + "\n")
+    print(bold + core.pink + "[*] Tool Version:" + green + "\t\t         | \t" + rr + str(toolVersion) + "\n")
+    print(" " + rr + ul + "Please Select From The Menu" + rr + "\n")
 
     print("\t{:10s} MalEditor".format("[" + purple + "1" + rr + "]"))
     print("\t{:10s} Send Malware With Email w/ Gmail".format("[" + purple + "2" + rr + "]"))
@@ -58,7 +59,7 @@ def helpMenu():
     print("Help menu")
     print("[1] MalEditor -is used for making malware using \"Malscript\", you can write and save your scripts here")
     print("[2] Reloads The Screen -is used for refreshing the screen")
-    # etc , add more stuff here
+# etc , add more stuff here
 
 
 def main():  # takes in user input and check for commands
@@ -78,8 +79,7 @@ def main():  # takes in user input and check for commands
             elif command == "help":
                 helpMenu()
             elif command == "z":
-                print(
-                    blue + "Please submit any bugs/issues/glitches at this link :\n" + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr)
+                print("\n" + rr + "Please submit any bugs/issues/glitches at this link :\n" + cyan + ul + bold + "https://github.com/asian-code/malfactory/issues" + rr + "\n")
             elif command == "u":
                 dontgo = input(red + bold + "[!] Are you sure you want to UNINSTALL Malfactory? (y/n):" + rr)
                 dontgo = dontgo.lower()
@@ -87,20 +87,20 @@ def main():  # takes in user input and check for commands
                     loc = get_install_location()
                     uninstall_loc = loc + "/uninstaller"
                     print(blue + "[+] Checking for uninstaller in " + rr + uninstall_loc)
-
+                    
                     sys.path.append(loc)
                     try:
                         import uninstaller
                     except ImportError:
                         print(red + "[!] Error trying to uninstall" + rr)
-
+            
             else:
                 print(rr + red + "\nSorry, " + command + " is not a command.\n")
+
     except KeyboardInterrupt:
         core.quit()
     except Exception:
-        print(
-            rr + "\n[" + red + "+" + rr + "] Error: something went wrong \n")  # Need general error message since this try is the whole program instead of a specific block of code
+        print(rr + "\n[" + red + "+" + rr + "] Error: something went wrong \n")  # Need general error message since this try is the whole program instead of a specific block of code
         raise
 
 
@@ -111,28 +111,27 @@ def startup():  # display logo and options
     core.randomlogo()
     print(line + "\n")
     core.textlogo()
-    print(green + "[+] Checking for updates... " + rr)
-
+    #print(green + "[+] Checking for updates... " + green + "\t | \t" + locationfound(torfanswer))
+    
     # testing code{
-
+    
     loc = get_install_location()
     # if loc != "":
     updater_loc = loc + "/update"
-
     sys.path.append(loc)
     try:
         import update
         update.start_update()  # not force the update unless really outdated
         global toolVersion
         toolVersion = update.tool_version
-
+    
     except ImportError:
         toolVersion = red + "[!] Error trying to update." + rr
 
-    print(green + "[+] Checking for updater in " + rr + updater_loc + " | " + toolVersion)
-        
-    # } testing code
+    print(green + "[+] Checking for updater in " + rr + updater_loc + green + "\t | \t" + rr + toolVersion)
 
-    options()
+# } testing code
 
-    main()
+startup()
+options()
+main()
