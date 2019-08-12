@@ -4,6 +4,8 @@
 
 **<p align="center"> Tool version: 0.1 </p>**
 
+<img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/topbar.jpg" width="100%" height="5">
+
 <p align="center">  
 <a href="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" target="_blank"><img src="https://raw.githubusercontent.com/asian-code/Malfactory/master/malfactory-images/malfactorybanner.png" border="0" alt="malfactoryboard" width="450" height="350"></a> </p>
 
