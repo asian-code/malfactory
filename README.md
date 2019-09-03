@@ -32,7 +32,7 @@ Malfactory also allows upcomming analysts to see how programs can be spread thro
 ## <p align="center"> <img src="https://i.ibb.co/GPtkjY1/60889-200-29x29.png" alt="googleot" width="20" height="20"> &nbsp; Requirements &nbsp; <img src="https://i.ibb.co/GPtkjY1/60889-200-29x29.png" alt="googleot" width="20" height="20"> </p>
 
 Operating System:
-* ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) Mac OS ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) *(Requires [Brew](https://brew.sh/))*
+* <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/mac-logo.png" height="10" width="10"> Mac OS ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) *(Requires [Brew](https://brew.sh/))*
 * ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) Linux ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) *(Debian Based: Preferably [Kali Linux](https://www.kali.org/))*
 * <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15"> Android <img src="https://source.android.com/setup/images/Android_greenrobot.png" alt="android" width="15" height="15"> *(Requires [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_US))*
 
