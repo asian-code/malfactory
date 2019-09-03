@@ -57,7 +57,7 @@ Python Library (Pip3):
 
 <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/topbar.jpg" width="100%" height="5">
 
-## <p align="center"> <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> &nbsp; How to Run &nbsp; <img src="https://image.flaticon.com/icons/png/512/59/59108.png" alt="googleot" width="20" height="20"> </p>
+## <p align="center"> <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/gears.png" alt="googleot" width="20" height="20"> &nbsp; How to Run &nbsp; <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/gears.png" alt="googleot" width="20" height="20"> </p>
 
 Open your terminal, navigate to the malfactory installation folder and type:
 `chmod +x *`
@@ -65,8 +65,6 @@ and
 `sudo python3 setup.py`
 <br>
 * **IMPORTANT NOTICE: <br>*Please do not move mal-factory folder to a different location on your system after you run setup.py***
-
-**Please read our [MalEditor Documenation](https://github.com/asian-code/malfactory/wiki/MalEditor) to see how the tool works!**
 
 <br><br>
 
@@ -85,9 +83,12 @@ If typing `malfactory` in your terminal does not work, then either you did not r
 
 Most files go to `/usr/share/mal-factory`, `malfactory.desktop` goes to `/usr/share/applications/`, and `malfactory` goes to `/usr/bin`. `setup.py` does all this for you but in case it doesnt, please report the issue with a screenshot of any error messages. :grin:
 
+<br><br>
+**Please read our [MalEditor Documenation](https://github.com/asian-code/malfactory/wiki/MalEditor) to see how the tool works!**
+
 <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/topbar.jpg" width="100%" height="5">
 
-## <p align="center"> <p align="center"> <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> &nbsp; Contributing &nbsp; <img src="http://cdn.onlinewebfonts.com/svg/img_452175.png" alt="googleot" width="30" height="20"> </p>
+## <p align="center"> <p align="center"> <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/handshake.png" alt="googleot" width="30" height="20"> &nbsp; Contributing &nbsp; <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/handshake.png" alt="googleot" width="30" height="20"> </p>
 
 Please read [CONTRIBUTING.md](https://github.com/asian-code/malfactory/blob/master/docs/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
@@ -97,7 +98,7 @@ See also the list of contributors who participated in this project.
 
 <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/topbar.jpg" width="100%" height="5">
 
-## <p align="center"> <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/document-icon.png" alt="licenseicon" width="20" height="20"> </p>
+## <p align="center"> <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/document-icon.png" alt="licenseicon" width="20" height="20"> &nbsp; License &nbsp; <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/document-icon.png" alt="licenseicon" width="20" height="20"> </p>
 
 This project is licensed under the GNU General Public License (v3.0) - see the [LICENSE.md](https://github.com/asian-code/malfactory/blob/master/docs/LICENSE) file for details.
 
