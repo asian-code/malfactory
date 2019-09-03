@@ -34,7 +34,7 @@ Malfactory also allows upcomming analysts to see how programs can be spread thro
 Operating System:
 * <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/mac-logo.png" height="20" width="20"> Mac OS <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/mac-logo.png" height="20" width="20"> *(Requires [Brew](https://brew.sh/))*
 * <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/linux-logo.png" height="20" width="20"> Linux <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/linux-logo.png" height="20" width="20"> *(Debian Based: Preferably [Kali Linux](https://www.kali.org/))*
-* <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/android-logo.png" height="20" width="20"> Android <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/android-logo.png" height="20" width="20"> *(Requires [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_US))*
+* <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/android-logo.png" height="20" width="20"> Android <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/android-logo.png" height="20" width="30"> *(Requires [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_US))*
 
 Packages:
 * python3
