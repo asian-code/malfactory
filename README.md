@@ -46,10 +46,6 @@ Python Library (Pip3):
 * [platform](https://docs.python.org/3/library/platform.html)
 * [playsound](https://pypi.org/project/playsound/)
 
-About/How to use:
-* [MalEditor](https://github.com/asian-code/malfactory/wiki/MalEditor)
-* [MalScript / All Commands](https://www.pornhub.com)
-
 <img src="https://raw.githubusercontent.com/asian-code/malfactory/master/malfactory-images/topbar.jpg" width="100%" height="5">
 
 ## <p align="center"> ![download logo](https://i.ibb.co/fXV1fGD/download.png") &nbsp; How to Install &nbsp; ![download logo](https://i.ibb.co/fXV1fGD/download.png") </p>
@@ -69,6 +65,8 @@ and
 `sudo python3 setup.py`
 <br>
 * **IMPORTANT NOTICE: <br>*Please do not move mal-factory folder to a different location on your system after you run setup.py***
+
+**Please read our [MalEditor Documenation](https://github.com/asian-code/malfactory/wiki/MalEditor) to see how the tool works!**
 
 <br><br>
 
